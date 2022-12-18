@@ -1,12 +1,13 @@
 import Head from 'next/head';
+import Content from '../components/Content';
 
 const Page = () => {
 	return (
 		<>
 			<Head>
-				<title>Lets go</title>
+				<title>Home</title>
 			</Head>
-			<p>Take me home</p>
+			<Content />
 		</>
 	);
 };

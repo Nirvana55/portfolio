@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import React, { FC } from 'react';
 
 interface LayoutProps {
@@ -5,7 +6,7 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
-	return <div>{children}</div>;
+	return <Box sx={{ width: '55%', m: '0 auto' }}>{children}</Box>;
 };
 
 export default Layout;
