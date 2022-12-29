@@ -14,6 +14,7 @@ import {
 	Toolbar,
 	Typography,
 } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const NavBar = () => {
 	const drawerWidth = 240;
@@ -63,12 +64,18 @@ const NavBar = () => {
 						sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
 						Nikhil
 					</Typography>
-					<Box>
+					<Box display='flex' alignItems='center'>
 						{navList.map((item) => (
 							<Button key={item} sx={{ color: '#fff' }}>
 								{item}
 							</Button>
 						))}
+						<Box
+							component='a'
+							href='/'
+							sx={{ cursor: 'pointer', ml: '0.875rem' }}>
+							<GitHubIcon sx={{ color: 'white' }} />
+						</Box>
 					</Box>
 				</Toolbar>
 			</AppBar>
