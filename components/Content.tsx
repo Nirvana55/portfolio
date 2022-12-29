@@ -9,7 +9,7 @@ import Link from 'next/link';
 const Content = () => {
 	return (
 		<Box
-			sx={{ mt: 18 }}
+			sx={{ height: '79vh' }}
 			display='flex'
 			alignItems='center'
 			flexDirection='column'

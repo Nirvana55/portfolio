@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
 	return (
-		<Box component='footer' sx={{ marginTop: 38 }} textAlign='center'>
+		<Box component='footer' sx={{ marginTop: 12 }} textAlign='center'>
 			<Typography variant='body2'>Created by Nikhil Lama.</Typography>
 		</Box>
 	);
