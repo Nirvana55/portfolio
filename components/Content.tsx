@@ -9,7 +9,7 @@ import Link from 'next/link';
 const Content = () => {
 	return (
 		<Box
-			sx={{ mt: 20 }}
+			sx={{ mt: 18 }}
 			display='flex'
 			alignItems='center'
 			flexDirection='column'
