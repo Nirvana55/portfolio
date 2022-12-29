@@ -29,7 +29,6 @@ const Content = () => {
 				<Typography sx={{ mt: 4 }}>NIRVANA here.</Typography>
 				<Typography sx={{ mt: 2 }}>Want to work together ?</Typography>
 			</Box>
-
 			<Button sx={{ mt: 4 }} size='large' variant='contained'>
 				Contact Now
 			</Button>

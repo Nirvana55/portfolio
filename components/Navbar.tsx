@@ -72,7 +72,7 @@ const NavBar = () => {
 						))}
 						<Box
 							component='a'
-							href='/'
+							href='https://github.com/Nirvana55'
 							sx={{ cursor: 'pointer', ml: '0.875rem' }}>
 							<GitHubIcon sx={{ color: 'white' }} />
 						</Box>
