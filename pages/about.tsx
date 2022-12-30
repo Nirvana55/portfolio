@@ -40,7 +40,12 @@ const About = () => {
 						Timeline:
 					</Typography>
 					<Box>
-						<Timeline sx={{ alignItems: 'flex-start' }} position='right'>
+						<Timeline
+							sx={{ alignItems: 'flex-start' }}
+							position='right'
+							nonce={undefined}
+							onResize={undefined}
+							onResizeCapture={undefined}>
 							<TimelineItem>
 								<TimelineSeparator>
 									<TimelineDot />
