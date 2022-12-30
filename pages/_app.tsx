@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@mui/material';
+import { Box, ThemeProvider } from '@mui/material';
 import { AppProps } from 'next/app';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
@@ -12,7 +12,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 			<ThemeProvider theme={theme}>
 				<Layout>
 					<NavBar />
-					<Component {...pageProps} />
+					<Box sx={{ height: '79vh' }}>
+						<Component {...pageProps} />
+					</Box>
 					<Footer />
 				</Layout>
 			</ThemeProvider>
