@@ -6,12 +6,11 @@ import { Box, Button, Typography } from '@mui/material';
 const Content = () => {
 	return (
 		<Box
-			sx={{ height: '79vh' }}
 			display='flex'
 			alignItems='center'
 			flexDirection='column'
 			justifyContent='center'>
-			<div>
+			<Box sx={{ mt: 20 }}>
 				<Box sx={{ borderRadius: '50%', border: '3px solid #fff' }}>
 					<Image
 						height={180}
@@ -21,7 +20,7 @@ const Content = () => {
 						alt='Nirvana'
 					/>
 				</Box>
-			</div>
+			</Box>
 			<Box sx={{ mt: 3 }} textAlign='center'>
 				<Typography variant='h3' fontWeight='bold'>
 					Hey, Wassup ?

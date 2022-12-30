@@ -2,11 +2,17 @@ import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import Nirvana from '../public/nirvana.jpg';
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
 
 const About = () => {
 	return (
-		<Box sx={{ height: '79vh', pl: '2.5rem', pr: '2.5rem', mt: 3 }}>
-			<Typography variant='h4' fontWeight='bold'>
+		<Box sx={{ pl: '2.5rem', pr: '2.5rem' }}>
+			<Typography marginTop={0.5} variant='h4' fontWeight='bold'>
 				About Me
 			</Typography>
 			<Box display='flex' sx={{ p: '2rem 1rem' }}>
@@ -17,8 +23,8 @@ const About = () => {
 					<Typography marginTop='1rem' variant='h5'>
 						Nikhil Lama
 					</Typography>
-					<Typography marginTop='1rem' variant='body1'>
-						WEB DEVELOPER
+					<Typography marginTop='1rem' variant='caption'>
+						WEB DEVELOPER / NETWORK SECURITY
 					</Typography>
 				</Box>
 
@@ -33,7 +39,38 @@ const About = () => {
 					<Typography variant='h6' fontWeight='bold' marginTop={2}>
 						Timeline:
 					</Typography>
-					<Box></Box>
+					<Box>
+						<Timeline sx={{ alignItems: 'flex-start' }} position='right'>
+							<TimelineItem>
+								<TimelineSeparator>
+									<TimelineDot />
+									<TimelineConnector />
+								</TimelineSeparator>
+								<TimelineContent>Eat</TimelineContent>
+							</TimelineItem>
+							<TimelineItem>
+								<TimelineSeparator>
+									<TimelineDot />
+									<TimelineConnector />
+								</TimelineSeparator>
+								<TimelineContent>Code</TimelineContent>
+							</TimelineItem>
+							<TimelineItem>
+								<TimelineSeparator>
+									<TimelineDot />
+									<TimelineConnector />
+								</TimelineSeparator>
+								<TimelineContent>Sleep</TimelineContent>
+							</TimelineItem>
+							<TimelineItem>
+								<TimelineSeparator>
+									<TimelineDot />
+									<TimelineConnector />
+								</TimelineSeparator>
+								<TimelineContent>Repeat</TimelineContent>
+							</TimelineItem>
+						</Timeline>
+					</Box>
 				</Box>
 			</Box>
 		</Box>
