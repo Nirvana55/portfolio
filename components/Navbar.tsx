@@ -19,7 +19,11 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 const NavBar = () => {
 	const drawerWidth = 240;
 	const [mobileOpen, setMobileOpen] = useState(false);
-	const navList = ['Home', 'About', 'Contact'];
+	const navList = [
+		{ id: 1, name: 'Home', link: '/' },
+		{ id: 2, name: 'About', link: '/about' },
+		{ id: 3, name: 'Blog', link: '/blog' },
+	];
 
 	const handleDrawerToggle = () => {
 		setMobileOpen(!mobileOpen);
@@ -31,11 +35,11 @@ const NavBar = () => {
 			<Divider />
 			<List>
 				{navList.map((item) => (
-					<ListItem key={item} disablePadding>
+					<ListItem key={item.id} disablePadding>
 						<ListItemButton sx={{ textAlign: 'center' }}>
-							<ListItemText primary={item} />
+							<ListItemText primary={item.name} />
 						</ListItemButton>
-						{item}
+						{item.name}
 					</ListItem>
 				))}
 			</List>
@@ -66,9 +70,9 @@ const NavBar = () => {
 					</Typography>
 					<Box display='flex' alignItems='center'>
 						{navList.map((item) => (
-							<Button key={item} sx={{ color: '#fff' }}>
-								{item}
-							</Button>
+							<Box component='a' key={item.id} href={item.link}>
+								<Button sx={{ color: '#fff' }}>{item.name}</Button>
+							</Box>
 						))}
 						<Box
 							component='a'
