@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import Nirvana from '../public/nirvana.jpg';
+import Nirvana from '../../public/nirvana.jpg';
 import { useTheme } from '@mui/material/styles';
 import { Box, Button, Typography, useMediaQuery } from '@mui/material';
 
