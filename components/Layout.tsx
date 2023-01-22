@@ -6,7 +6,18 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
-	return <Box sx={{ width: '55%', m: '0 auto' }}>{children}</Box>;
+	return (
+		<Box
+			sx={{
+				width: '55%',
+				m: '0 auto',
+				minHeight: '100vh',
+				display: 'flex',
+				flexDirection: 'column',
+			}}>
+			{children}
+		</Box>
+	);
 };
 
 export default Layout;

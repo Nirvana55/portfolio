@@ -2,25 +2,25 @@ import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import Nirvana from '../public/nirvana.jpg';
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineDot from '@mui/lab/TimelineDot';
 
 const About = () => {
 	return (
-		<Box sx={{ pl: '2.5rem', pr: '2.5rem' }}>
+		<Box sx={{ pl: '2.8rem', pr: '2.8rem' }}>
 			<Typography marginTop={0.5} variant='h4' fontWeight='bold'>
 				About Me
 			</Typography>
 			<Box display='flex' sx={{ p: '2rem 1rem' }}>
-				<Box width={750} sx={{}}>
-					<Box sx={{ border: '2px solid white', borderRadius: '5px' }}>
-						<Image src={Nirvana} alt='Nirvana' />
+				<Box width={750}>
+					<Box
+						sx={{
+							border: '2px solid white',
+							padding: '0.8rem',
+							width: '200px',
+							borderRadius: '5px',
+						}}>
+						<Image src={Nirvana} height={200} width={200} alt='Nirvana' />
 					</Box>
-					<Typography marginTop='1rem' variant='h5'>
+					<Typography marginTop='1rem' variant='h6'>
 						Nikhil Lama
 					</Typography>
 					<Typography marginTop='1rem' variant='caption'>
@@ -33,49 +33,12 @@ const About = () => {
 						Full stack web developer who has worked on sites for small and
 						medium-sized enterprises. I can assist you in advertising your
 						services and design up a whole website to boost your business.
-						Profound in HTML,CSS, the Mern stack(React/Node/Mongodb) and
+						Profound in HTML,CSS, the MERN stack(React/Node/Mongodb) and
 						wordpress.
 					</Typography>
 					<Typography variant='h6' fontWeight='bold' marginTop={2}>
 						Timeline:
 					</Typography>
-					<Box>
-						<Timeline
-							sx={{ alignItems: 'flex-start' }}
-							position='right'
-							nonce={undefined}
-							onResize={undefined}
-							onResizeCapture={undefined}>
-							<TimelineItem>
-								<TimelineSeparator>
-									<TimelineDot />
-									<TimelineConnector />
-								</TimelineSeparator>
-								<TimelineContent>Eat</TimelineContent>
-							</TimelineItem>
-							<TimelineItem>
-								<TimelineSeparator>
-									<TimelineDot />
-									<TimelineConnector />
-								</TimelineSeparator>
-								<TimelineContent>Code</TimelineContent>
-							</TimelineItem>
-							<TimelineItem>
-								<TimelineSeparator>
-									<TimelineDot />
-									<TimelineConnector />
-								</TimelineSeparator>
-								<TimelineContent>Sleep</TimelineContent>
-							</TimelineItem>
-							<TimelineItem>
-								<TimelineSeparator>
-									<TimelineDot />
-									<TimelineConnector />
-								</TimelineSeparator>
-								<TimelineContent>Repeat</TimelineContent>
-							</TimelineItem>
-						</Timeline>
-					</Box>
 				</Box>
 			</Box>
 		</Box>
