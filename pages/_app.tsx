@@ -10,7 +10,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<ThemeProvider theme={theme}>
-				<CssBaseline />
 				<Layout>
 					<NavBar />
 					<Component {...pageProps} />
