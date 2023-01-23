@@ -2,11 +2,10 @@ import React from 'react';
 import Image from 'next/image';
 import Nirvana from '../../public/nirvana.jpg';
 import { useTheme } from '@mui/material/styles';
-import { Box, Button, Typography, useMediaQuery } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 
 const Content = () => {
 	const theme = useTheme();
-	const matches = useMediaQuery(theme.breakpoints.up('md'));
 
 	return (
 		<Box
@@ -36,7 +35,7 @@ const Content = () => {
 				</Typography>
 				<Typography sx={{ mt: 2 }}>Want to work together ?</Typography>
 			</Box>
-			<Button sx={{ mt: 4 }} size='medium' variant='contained'>
+			<Button sx={{ mt: 4, color: 'white' }} size='medium' variant='contained'>
 				Contact Now
 			</Button>
 		</Box>

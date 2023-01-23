@@ -38,6 +38,7 @@ const NavBar = () => {
 				position='static'
 				component='nav'
 				color='transparent'
+				elevation={0}
 				sx={{ mb: '1rem' }}>
 				<Toolbar>
 					{/* <IconButton
