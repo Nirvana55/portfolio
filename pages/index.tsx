@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Content from '../components/Content/Content';
+import Content from '../components/Content';
 
 const Page = () => {
 	return (
