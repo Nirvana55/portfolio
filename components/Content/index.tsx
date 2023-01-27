@@ -11,8 +11,8 @@ const Content = () => {
 
 	return (
 		<>
-			<Box display='flex' justifyContent='space-between' sx={{ mt: 10 }}>
-				<Box sx={{ mt: 3, flexBasis: '600px' }}>
+			<Box display='flex' justifyContent='space-between' sx={{ mt: 6 }}>
+				<Box sx={{ mt: 3, flexBasis: '500px' }}>
 					<Typography sx={{ fontSize: 35 }} fontWeight='bold'>
 						Hey, Wassup
 					</Typography>
@@ -20,7 +20,8 @@ const Content = () => {
 						sx={{
 							mt: 3,
 							lineHeight: 1.8,
-						}}>
+						}}
+						variant='body2'>
 						Full stack web developer who has worked on sites for small and
 						medium-sized enterprises. I can assist you in advertising your
 						services and design up a whole website to boost your business.
@@ -43,7 +44,7 @@ const Content = () => {
 					/>
 				</Box>
 			</Box>
-			<Box>
+			<Box sx={{ mb: 4 }}>
 				<Blog />
 			</Box>
 		</>
