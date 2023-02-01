@@ -4,7 +4,7 @@ import Nirvana from '../../public/nirvana.jpg';
 import { useTheme } from '@mui/material/styles';
 import { Box, Typography } from '@mui/material';
 import { ReadMoreButtonStyle } from './style';
-import Blog from '../Blog';
+import RecentPost from '../Recent Posts';
 
 const Content = () => {
 	const theme = useTheme();
@@ -45,7 +45,7 @@ const Content = () => {
 				</Box>
 			</Box>
 			<Box sx={{ mb: 4 }}>
-				<Blog />
+				<RecentPost />
 			</Box>
 		</>
 	);
