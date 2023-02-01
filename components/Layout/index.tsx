@@ -1,13 +1,13 @@
 import { Box } from '@mui/material';
 import React, { FC } from 'react';
-import { LayoutContainer } from './styles';
+import { LayoutContainerStyle } from './styles';
 
 interface LayoutProps {
 	children: React.ReactNode;
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
-	return <LayoutContainer>{children}</LayoutContainer>;
+	return <LayoutContainerStyle>{children}</LayoutContainerStyle>;
 };
 
 export default Layout;

@@ -1,9 +1,9 @@
-import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
+import { Box, createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { AppProps } from 'next/app';
 import { useMemo, useState } from 'react';
-import Footer from '../components/Footer/Footer';
-import Layout from '../components/Layout/Layout';
-import NavBar from '../components/Navbar/Navbar';
+import Footer from '../components/Footer';
+import Layout from '../components/Layout';
+import NavBar from '../components/Navbar';
 import getTheme from '../config';
 import '../styles/globals.css';
 
@@ -21,7 +21,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 				<CssBaseline />
 				<Layout>
 					<NavBar />
-					<Component {...pageProps} />
+					<Box sx={{ pl: 4, pr: 4 }}>
+						<Component {...pageProps} />
+					</Box>
 					<Footer />
 				</Layout>
 			</ThemeProvider>

@@ -1,22 +1,18 @@
 import { Box, Typography } from '@mui/material';
-import Image from 'next/image';
 import React from 'react';
-import WorkInProgress from '../public/work_in_progress.svg';
+import Blog from '../components/Blog';
 
-const Blog = () => {
+const BlogContainer = () => {
 	return (
-		<Box sx={{ pl: '2.5rem', pr: '2.5rem', textAlign: 'center', mt: 14 }}>
-			<Image
-				height={300}
-				width={300}
-				alt='work_in_progress'
-				src={WorkInProgress}
-			/>
-			<Typography variant='h5' fontWeight='semi-bold'>
-				Work In Progress
+		<Box>
+			<Typography marginTop={5} variant='h4' fontWeight='bold'>
+				Blogs
 			</Typography>
+			<Box sx={{ mt: 3 }}>
+				<Blog />
+			</Box>
 		</Box>
 	);
 };
 
-export default Blog;
+export default BlogContainer;

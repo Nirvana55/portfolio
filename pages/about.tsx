@@ -11,8 +11,8 @@ const About = () => {
 	const ipadScreen = useMediaQuery(theme.breakpoints.down('md'));
 
 	return (
-		<Box sx={{ p: '0 1.5rem' }}>
-			<Typography marginTop={0.5} variant='h4' fontWeight='bold'>
+		<Box>
+			<Typography marginTop={5} variant='h4' fontWeight='bold'>
 				About Me
 			</Typography>
 			<Box
