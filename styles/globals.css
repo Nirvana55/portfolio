@@ -26,3 +26,7 @@ a {
 .image-style {
 	border-radius: 50%;
 }
+
+.image-card {
+	border-radius: 4px;
+}

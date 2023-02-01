@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Nirvana from '../../public/nirvana.jpg';
 import { useTheme } from '@mui/material/styles';
 import { Box, Typography } from '@mui/material';
-import { ReadMoreButton } from './style';
+import { ReadMoreButtonStyle } from './style';
 import Blog from '../Blog';
 
 const Content = () => {
@@ -28,11 +28,11 @@ const Content = () => {
 						Profound in HTML,CSS, the MERN stack(React/Node/Mongodb) and
 						wordpress.
 					</Typography>
-					<ReadMoreButton
+					<ReadMoreButtonStyle
 						sx={{ mt: 2, color: 'white', padding: 0 }}
 						size='medium'>
 						Read More About Me
-					</ReadMoreButton>
+					</ReadMoreButtonStyle>
 				</Box>
 				<Box sx={{ mt: 5, borderRadius: '50%' }}>
 					<Image
