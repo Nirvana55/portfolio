@@ -181,7 +181,7 @@ const getPalette = (mode: PaletteMode) => ({
 				},
 				background: {
 					paper: '#25282A',
-					default: '#1E2022',
+					default: '#000',
 					neutral: INVERTED_GREY[200],
 				},
 				action: {
