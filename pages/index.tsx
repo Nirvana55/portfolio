@@ -9,8 +9,14 @@ import {
 	ReadMoreButtonStyle,
 	SeeAllPostButtonStyle,
 } from '../styles/homeStyles';
+import { getAllPosts } from '../utils/md';
+import { BlogsData } from '../types/blogData';
 
-const Page = () => {
+interface BlogPosts {
+	posts: BlogsData[];
+}
+
+const Page = ({ posts }: BlogPosts) => {
 	return (
 		<>
 			<Head>
@@ -55,7 +61,7 @@ const Page = () => {
 						Recent Posts
 					</Typography>
 					<Box sx={{ mt: 4 }}>
-						<Blog blog={[]} />
+						<Blog blogs={posts} />
 					</Box>
 					<Box sx={{ float: 'right', mt: 3, mb: 3 }}>
 						<SeeAllPostButtonStyle>
@@ -69,3 +75,13 @@ const Page = () => {
 };
 
 export default Page;
+
+export const getStaticProps = async () => {
+	const posts = getAllPosts();
+
+	return {
+		props: {
+			posts: posts,
+		},
+	};
+};
