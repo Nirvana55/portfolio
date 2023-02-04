@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Button, Fade, Toolbar, Typography } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 const NavBar = () => {
@@ -34,14 +34,15 @@ const NavBar = () => {
 
 	return (
 		<Box sx={{ display: 'flex' }}>
-			<AppBar
-				position='static'
-				component='nav'
-				color='transparent'
-				elevation={0}
-				sx={{ mb: '1rem' }}>
-				<Toolbar>
-					{/* <IconButton
+			<Fade in={true}>
+				<AppBar
+					position='static'
+					component='nav'
+					color='transparent'
+					elevation={0}
+					sx={{ mb: '1rem' }}>
+					<Toolbar>
+						{/* <IconButton
 						onClick={handleDrawerToggle}
 						edge='start'
 						color='inherit'
@@ -49,29 +50,31 @@ const NavBar = () => {
 						sx={{ display: { sm: 'none' }, mr: 2 }}>
 						<MenuIcon />
 					</IconButton> */}
-					<Typography
-						variant='h6'
-						component='div'
-						sx={{
-							flexGrow: 1,
-						}}>
-						Nikhil
-					</Typography>
-					<Box display='flex' alignItems='center'>
-						{navList.map((item) => (
-							<Box component='a' key={item.id} href={item.link}>
-								<Button sx={{ color: '#fff' }}>{item.name}</Button>
+						<Typography
+							variant='h6'
+							component='div'
+							sx={{
+								flexGrow: 1,
+							}}>
+							Nikhil
+						</Typography>
+						<Box display='flex' alignItems='center'>
+							{navList.map((item) => (
+								<Box component='a' key={item.id} href={item.link}>
+									<Button sx={{ color: '#fff' }}>{item.name}</Button>
+								</Box>
+							))}
+							<Box
+								component='a'
+								href='https://github.com/Nirvana55'
+								sx={{ cursor: 'pointer', ml: '0.875rem' }}>
+								<GitHubIcon sx={{ color: 'white' }} />
 							</Box>
-						))}
-						<Box
-							component='a'
-							href='https://github.com/Nirvana55'
-							sx={{ cursor: 'pointer', ml: '0.875rem' }}>
-							<GitHubIcon sx={{ color: 'white' }} />
 						</Box>
-					</Box>
-				</Toolbar>
-			</AppBar>
+					</Toolbar>
+				</AppBar>
+			</Fade>
+
 			{/* <Box component='nav'>
 				<Drawer
 					open={mobileOpen}

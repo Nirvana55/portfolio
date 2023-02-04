@@ -1,4 +1,4 @@
-import { Typography, Box } from '@mui/material';
+import { Typography, Box, Fade } from '@mui/material';
 import React from 'react';
 
 const Footer = () => {
@@ -7,7 +7,9 @@ const Footer = () => {
 			sx={{ marginTop: 'auto', marginBottom: 1 }}
 			component='footer'
 			textAlign='center'>
-			<Typography variant='body2'>Created by Nikhil Lama.</Typography>
+			<Fade in={true}>
+				<Typography variant='body2'>Created by Nikhil Lama.</Typography>
+			</Fade>
 		</Box>
 	);
 };

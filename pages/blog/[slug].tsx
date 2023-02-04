@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Fade, Typography } from '@mui/material';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
@@ -23,17 +23,23 @@ const Posts = ({
 	slug,
 }: PostsPropType) => {
 	return (
-		<Box>
-			<Typography fontWeight='bold' variant='h4'>
-				{title}
-			</Typography>
-			<Box>
-				<Typography variant='caption'>{date}</Typography> &nbsp;
-				<Typography variant='caption'>#{about}</Typography>
-			</Box>
-			<Typography marginTop={2} fontWeight='bold' variant='body2'>
-				{content}
-			</Typography>
+		<Box sx={{ mb: 4 }}>
+			<Fade in={true}>
+				<Typography fontWeight='bold' variant='h4'>
+					{title}
+				</Typography>
+			</Fade>
+			<Fade in={true}>
+				<Box>
+					<Typography variant='caption'>{date}</Typography> &nbsp;
+					<Typography variant='caption'>#{about}</Typography>
+				</Box>
+			</Fade>
+			<Fade in={true}>
+				<Typography marginTop={2} fontWeight='bold' variant='body2'>
+					{content}
+				</Typography>
+			</Fade>
 		</Box>
 	);
 };
