@@ -1,4 +1,5 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Fade, Typography } from '@mui/material';
+import Head from 'next/head';
 import React from 'react';
 import Blog from '../components/Blog';
 import { BlogsData } from '../types/blogData';
@@ -10,14 +11,22 @@ interface BlogContainer {
 
 const BlogContainer = ({ posts }: BlogContainer) => {
 	return (
-		<Box sx={{ mb: 4 }}>
-			<Typography marginTop={5} variant='h4' fontWeight='bold'>
-				Blogs
-			</Typography>
-			<Box sx={{ mt: 3 }}>
-				<Blog blogs={posts} />
+		<>
+			<Head>
+				<title>N | Blogs</title>
+			</Head>
+			<Box sx={{ mb: 4 }}>
+				<Fade in={true}>
+					<Typography marginTop={5} variant='h4' fontWeight='bold'>
+						Blogs
+					</Typography>
+				</Fade>
+
+				<Box sx={{ mt: 3 }}>
+					<Blog blogs={posts} />
+				</Box>
 			</Box>
-		</Box>
+		</>
 	);
 };
 
