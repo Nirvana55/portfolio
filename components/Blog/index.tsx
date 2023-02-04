@@ -11,7 +11,11 @@ import Nirvana from '../../public/nirvana.jpg';
 import Image from 'next/image';
 import { ImageContainerStyle } from './styles';
 
-const Blog = () => {
+interface BlogPosts {
+	blog: [];
+}
+
+const Blog = ({ blog }: BlogPosts) => {
 	return (
 		<Grid container spacing={2}>
 			<Grid item md={4}>
