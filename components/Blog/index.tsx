@@ -11,6 +11,7 @@ import Nirvana from '../../public/nirvana.jpg';
 import Image from 'next/image';
 import { ImageContainerStyle } from './styles';
 import { BlogsData } from '../../types/blogData';
+import Link from 'next/link';
 
 interface BlogPosts {
 	blogs: BlogsData[];
@@ -18,10 +19,10 @@ interface BlogPosts {
 
 const Blog = ({ blogs }: BlogPosts) => {
 	return (
-		<Grid container spacing={2}>
-			<Grid item md={4}>
-				{blogs?.map((blogs) => (
-					<Card key={blogs.slug} sx={{ maxWidth: 260 }}>
+		<Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
+			{blogs?.map((blogs) => (
+				<Grid key={blogs.slug} item xs={3.5} sm={4} md={4}>
+					<Card>
 						<ImageContainerStyle>
 							<Image
 								alt='Image Alt'
@@ -39,12 +40,19 @@ const Blog = ({ blogs }: BlogPosts) => {
 								{blogs.frontmatter.description}
 							</Typography>
 						</CardContent>
-						<CardActions>
-							<Button>Read</Button>
+						<CardActions sx={{ float: 'right' }}>
+							<Link href={`blog/${blogs.slug}`}>
+								<Button
+									variant='contained'
+									sx={{ color: 'white' }}
+									size='small'>
+									Read More
+								</Button>
+							</Link>
 						</CardActions>
 					</Card>
-				))}
-			</Grid>
+				</Grid>
+			))}
 		</Grid>
 	);
 };
