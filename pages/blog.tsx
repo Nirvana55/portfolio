@@ -10,7 +10,7 @@ interface BlogContainer {
 
 const BlogContainer = ({ posts }: BlogContainer) => {
 	return (
-		<Box>
+		<Box sx={{ mb: 4 }}>
 			<Typography marginTop={5} variant='h4' fontWeight='bold'>
 				Blogs
 			</Typography>

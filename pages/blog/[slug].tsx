@@ -23,7 +23,7 @@ const Posts = ({
 	slug,
 }: PostsPropType) => {
 	return (
-		<Box>
+		<Box sx={{ mb: 4 }}>
 			<Typography fontWeight='bold' variant='h4'>
 				{title}
 			</Typography>
