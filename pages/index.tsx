@@ -11,6 +11,7 @@ import {
 } from '../styles/homeStyles';
 import { getAllPosts } from '../utils/md';
 import { BlogsData } from '../types/blogData';
+import Link from 'next/link';
 
 interface BlogPosts {
 	posts: BlogsData[];
@@ -39,11 +40,13 @@ const Page = ({ posts }: BlogPosts) => {
 						Profound in HTML,CSS, the MERN stack(React/Node/Mongodb) and
 						wordpress.
 					</Typography>
-					<ReadMoreButtonStyle
-						sx={{ mt: 2, color: 'white', padding: 0 }}
-						size='medium'>
-						Read More About Me
-					</ReadMoreButtonStyle>
+					<Link href='/about'>
+						<ReadMoreButtonStyle
+							sx={{ mt: 2, color: 'white', padding: 0 }}
+							size='medium'>
+							Read More About Me
+						</ReadMoreButtonStyle>
+					</Link>
 				</Box>
 				<Box sx={{ mt: 5, borderRadius: '50%' }}>
 					<Image
@@ -64,9 +67,11 @@ const Page = ({ posts }: BlogPosts) => {
 						<Blog blogs={posts} />
 					</Box>
 					<Box sx={{ float: 'right', mt: 3, mb: 3 }}>
-						<SeeAllPostButtonStyle>
-							See All Posts <ArrowRightAltIcon sx={{ pl: 1 }} />
-						</SeeAllPostButtonStyle>
+						<Link href='/blog'>
+							<SeeAllPostButtonStyle>
+								See All Posts <ArrowRightAltIcon sx={{ pl: 1 }} />
+							</SeeAllPostButtonStyle>
+						</Link>
 					</Box>
 				</Box>
 			</Box>
