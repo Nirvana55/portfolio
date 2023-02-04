@@ -175,13 +175,13 @@ const getPalette = (mode: PaletteMode) => ({
 				chart: CHART_COLORS,
 				divider: INVERTED_GREY[500_24],
 				text: {
-					primary: INVERTED_GREY[800],
+					primary: '#ffff',
 					secondary: INVERTED_GREY[600],
 					disabled: INVERTED_GREY[500],
 				},
 				background: {
 					paper: '#25282A',
-					default: '#1E2022',
+					default: '#000',
 					neutral: INVERTED_GREY[200],
 				},
 				action: {
