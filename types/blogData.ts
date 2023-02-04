@@ -1,6 +1,8 @@
 export interface BlogsData {
 	slug: string;
-	frontmatter: {
-		[key: string]: string;
-	};
+	frontmatter: FrontMatter;
+}
+
+export interface FrontMatter {
+	[key: string]: string;
 }
