@@ -1,4 +1,5 @@
 import { Box, Fade, Typography } from '@mui/material';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import React from 'react';
 import Blog from '../components/Blog';
@@ -32,7 +33,7 @@ const BlogContainer = ({ posts }: BlogContainer) => {
 
 export default BlogContainer;
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps<BlogContainer> = async () => {
 	const posts = getAllPosts();
 
 	return {
