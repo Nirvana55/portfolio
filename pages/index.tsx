@@ -12,6 +12,7 @@ import {
 import { getAllPosts } from '../utils/md';
 import { BlogsData } from '../types/blogData';
 import Link from 'next/link';
+import { GetStaticProps } from 'next';
 
 interface BlogPosts {
 	posts: BlogsData[];
@@ -93,7 +94,7 @@ const Page = ({ posts }: BlogPosts) => {
 
 export default Page;
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps<BlogPosts> = async () => {
 	const posts = getAllPosts();
 
 	return {
