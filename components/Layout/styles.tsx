@@ -2,7 +2,7 @@ import { styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
 
 export const LayoutContainerStyle = styled(Box)(({ theme }) => ({
-	width: '50%',
+	width: '51%',
 	margin: '0 auto',
 	minHeight: '100vh',
 	display: 'flex',
