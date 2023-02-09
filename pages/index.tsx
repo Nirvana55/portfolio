@@ -76,11 +76,18 @@ const Page = ({ posts }: BlogPosts) => {
 					</Fade>
 					<Box sx={{ mt: 4 }}>
 						<Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
-							{posts.map((blogs) => (
-								<Grid item key={blogs.slug} xs={3.5} sm={4} md={4}>
-									<Blog blogs={blogs} />
-								</Grid>
-							))}
+							{posts
+								.sort(
+									(a, b) =>
+										new Date(b.frontmatter.date).getTime() -
+										new Date(a.frontmatter.date).getTime()
+								)
+								.slice(0, 3)
+								.map((blogs) => (
+									<Grid item key={blogs.slug} xs={3.5} sm={4} md={4}>
+										<Blog blogs={blogs} />
+									</Grid>
+								))}
 						</Grid>
 					</Box>
 

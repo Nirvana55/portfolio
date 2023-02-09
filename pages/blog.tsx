@@ -25,11 +25,17 @@ const BlogContainer = ({ posts }: BlogContainer) => {
 
 				<Box sx={{ mt: 3 }}>
 					<Grid container spacing={2} columns={{ xs: 2, sm: 8, md: 12 }}>
-						{posts.map((posts) => (
-							<Grid item xs={3.5} sm={4} md={4} key={posts.slug}>
-								<Blog blogs={posts} />
-							</Grid>
-						))}
+						{posts
+							.sort(
+								(a, b) =>
+									new Date(b.frontmatter.date).getTime() -
+									new Date(a.frontmatter.date).getTime()
+							)
+							.map((posts) => (
+								<Grid item xs={3.5} sm={4} md={4} key={posts.slug}>
+									<Blog blogs={posts} />
+								</Grid>
+							))}
 					</Grid>
 				</Box>
 			</Box>
