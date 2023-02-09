@@ -24,7 +24,11 @@ const Page = ({ posts }: BlogPosts) => {
 			<Head>
 				<title>N | Home</title>
 			</Head>
-			<Box display='flex' justifyContent='space-between' sx={{ mt: 6 }}>
+			<Box
+				display='flex'
+				justifyContent='space-between'
+				alignItems='center'
+				sx={{ mt: 6 }}>
 				<Box sx={{ mt: 3, flexBasis: '500px' }}>
 					<Fade in={true}>
 						<Typography sx={{ fontSize: 35 }} fontWeight='bold'>
@@ -56,7 +60,12 @@ const Page = ({ posts }: BlogPosts) => {
 					</Link>
 				</Box>
 				<Fade in={true}>
-					<Box sx={{ mt: 5, borderRadius: '50%' }}>
+					<Box
+						sx={{
+							mt: 5,
+							borderRadius: '50%',
+							boxShadow: '0px 0px 8px 1px #DC143C',
+						}}>
 						<Image
 							height={140}
 							width={140}
