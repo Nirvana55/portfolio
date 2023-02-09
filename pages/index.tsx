@@ -2,7 +2,7 @@ import Head from 'next/head';
 import React from 'react';
 import Image from 'next/image';
 import Nirvana from '../public/nirvana.jpg';
-import { Box, Fade, Typography } from '@mui/material';
+import { Box, Fade, Grid, Typography } from '@mui/material';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import Blog from '../components/Blog';
 import {
@@ -19,16 +19,25 @@ interface BlogPosts {
 }
 
 const Page = ({ posts }: BlogPosts) => {
+	const convertDate = (string: string) => {
+		const date = new Date(string);
+		return date;
+	};
+
 	return (
 		<>
 			<Head>
 				<title>N | Home</title>
 			</Head>
-			<Box display='flex' justifyContent='space-between' sx={{ mt: 6 }}>
+			<Box
+				display='flex'
+				justifyContent='space-between'
+				alignItems='center'
+				sx={{ mt: 6 }}>
 				<Box sx={{ mt: 3, flexBasis: '500px' }}>
 					<Fade in={true}>
 						<Typography sx={{ fontSize: 35 }} fontWeight='bold'>
-							Hey, Wassup
+							<Typography sx={{ fontSize: 35 }}>Hey</Typography>, Wassup
 						</Typography>
 					</Fade>
 					<Fade in={true}>
@@ -56,7 +65,12 @@ const Page = ({ posts }: BlogPosts) => {
 					</Link>
 				</Box>
 				<Fade in={true}>
-					<Box sx={{ mt: 5, borderRadius: '50%' }}>
+					<Box
+						sx={{
+							mt: 5,
+							borderRadius: '50%',
+							boxShadow: '0px 0px 8px 1px #DC143C',
+						}}>
 						<Image
 							height={140}
 							width={140}
@@ -75,8 +89,22 @@ const Page = ({ posts }: BlogPosts) => {
 						</Typography>
 					</Fade>
 					<Box sx={{ mt: 4 }}>
-						<Blog blogs={posts} />
+						<Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
+							{posts
+								// .sort(
+								// 	(a, b) =>
+								// 		convertDate(b.frontmatter.date).valueOf() -
+								// 		convertDate(a.frontmatter.date).valueOf()
+								// )
+								.slice(0, 3)
+								.map((blogs) => (
+									<Grid item key={blogs.slug} xs={3.5} sm={4} md={4}>
+										<Blog blogs={blogs} />
+									</Grid>
+								))}
+						</Grid>
 					</Box>
+
 					<Box sx={{ float: 'right', mt: 3, mb: 3 }}>
 						<Link href='/blog'>
 							<Fade in={true}>
