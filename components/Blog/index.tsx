@@ -20,9 +20,9 @@ interface BlogPosts {
 
 const Blog = ({ blogs }: BlogPosts) => {
 	return (
-		<Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }}>
+		<Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 11 }}>
 			{blogs?.map((blogs) => (
-				<Grid key={blogs.slug} item xs={3.5} sm={4} md={4}>
+				<Grid key={blogs.slug} item xs={3.5} sm={4} md={3.6}>
 					<Fade in={true}>
 						<CardContainer>
 							<ImageContainerStyle>
