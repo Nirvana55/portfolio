@@ -1,6 +1,6 @@
 ---
 title: My Second Blog
 description: Lorem ipsum dolor sit amet consectetur, adipisicingelit.
-date: Todays date
+date: '2023-02-14'
 about: cook
 ---

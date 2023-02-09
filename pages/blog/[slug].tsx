@@ -22,6 +22,8 @@ const Posts = ({
 	content,
 	slug,
 }: PostsPropType) => {
+	const dateConvert = new Date(date);
+
 	return (
 		<Box sx={{ mb: 4 }}>
 			<Fade in={true}>
@@ -31,7 +33,14 @@ const Posts = ({
 			</Fade>
 			<Fade in={true}>
 				<Box>
-					<Typography variant='caption'>{date}</Typography> &nbsp;
+					<Typography variant='caption'>
+						{dateConvert.toLocaleDateString('en-US', {
+							year: 'numeric',
+							month: 'long',
+							day: 'numeric',
+						})}
+					</Typography>
+					&nbsp;
 					<Typography variant='caption'>#{about}</Typography>
 				</Box>
 			</Fade>

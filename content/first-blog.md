@@ -1,7 +1,7 @@
 ---
 title: My First Blog
 description: Lorem ipsum dolor sit amet consectetur, adipisicingelit.
-date: 4th February 2023
+date: '2023-02-09'
 about: Cooking
 ---
 
