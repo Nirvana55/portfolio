@@ -19,6 +19,11 @@ interface BlogPosts {
 }
 
 const Page = ({ posts }: BlogPosts) => {
+	const convertDate = (string: string) => {
+		const date = new Date(string);
+		return date;
+	};
+
 	return (
 		<>
 			<Head>
@@ -32,7 +37,7 @@ const Page = ({ posts }: BlogPosts) => {
 				<Box sx={{ mt: 3, flexBasis: '500px' }}>
 					<Fade in={true}>
 						<Typography sx={{ fontSize: 35 }} fontWeight='bold'>
-							Hey, Wassup
+							<Typography sx={{ fontSize: 35 }}>Hey</Typography>, Wassup
 						</Typography>
 					</Fade>
 					<Fade in={true}>
@@ -86,11 +91,11 @@ const Page = ({ posts }: BlogPosts) => {
 					<Box sx={{ mt: 4 }}>
 						<Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
 							{posts
-								.sort(
-									(a, b) =>
-										new Date(b.frontmatter.date).getTime() -
-										new Date(a.frontmatter.date).getTime()
-								)
+								// .sort(
+								// 	(a, b) =>
+								// 		convertDate(b.frontmatter.date).valueOf() -
+								// 		convertDate(a.frontmatter.date).valueOf()
+								// )
 								.slice(0, 3)
 								.map((blogs) => (
 									<Grid item key={blogs.slug} xs={3.5} sm={4} md={4}>
