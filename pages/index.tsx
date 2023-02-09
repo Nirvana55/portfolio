@@ -2,7 +2,7 @@ import Head from 'next/head';
 import React from 'react';
 import Image from 'next/image';
 import Nirvana from '../public/nirvana.jpg';
-import { Box, Fade, Typography } from '@mui/material';
+import { Box, Fade, Grid, Typography } from '@mui/material';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import Blog from '../components/Blog';
 import {
@@ -75,8 +75,15 @@ const Page = ({ posts }: BlogPosts) => {
 						</Typography>
 					</Fade>
 					<Box sx={{ mt: 4 }}>
-						<Blog blogs={posts} />
+						<Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
+							{posts.map((blogs) => (
+								<Grid item key={blogs.slug} xs={3.5} sm={4} md={4}>
+									<Blog blogs={blogs} />
+								</Grid>
+							))}
+						</Grid>
 					</Box>
+
 					<Box sx={{ float: 'right', mt: 3, mb: 3 }}>
 						<Link href='/blog'>
 							<Fade in={true}>

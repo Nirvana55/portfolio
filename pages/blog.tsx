@@ -1,4 +1,4 @@
-import { Box, Fade, Typography } from '@mui/material';
+import { Box, Fade, Grid, Typography } from '@mui/material';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import React from 'react';
@@ -24,7 +24,13 @@ const BlogContainer = ({ posts }: BlogContainer) => {
 				</Fade>
 
 				<Box sx={{ mt: 3 }}>
-					<Blog blogs={posts} />
+					<Grid container spacing={2} columns={{ xs: 2, sm: 8, md: 12 }}>
+						{posts.map((posts) => (
+							<Grid item xs={3.5} sm={4} md={4} key={posts.slug}>
+								<Blog blogs={posts} />
+							</Grid>
+						))}
+					</Grid>
 				</Box>
 			</Box>
 		</>
