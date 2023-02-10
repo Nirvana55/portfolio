@@ -8,7 +8,6 @@ import Head from 'next/head';
 
 const About = () => {
 	const theme = useTheme();
-	const mobileScreen = useMediaQuery(theme.breakpoints.down('xl'));
 	const ipadScreen = useMediaQuery(theme.breakpoints.down('md'));
 
 	return (
@@ -25,7 +24,7 @@ const About = () => {
 
 				<Box
 					display='flex'
-					flexDirection={mobileScreen ? 'column' : 'row'}
+					flexDirection={ipadScreen ? 'column' : 'row'}
 					sx={{ p: '2rem 1rem' }}>
 					<Box>
 						<Fade in={true}>
