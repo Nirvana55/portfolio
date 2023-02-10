@@ -8,22 +8,22 @@ import Blog from '../components/Blog';
 import {
 	ReadMoreButtonStyle,
 	SeeAllPostButtonStyle,
+	WaveHandStyle,
 } from '../styles/homeStyles';
 import { getAllPosts } from '../utils/md';
 import { BlogsData } from '../types/blogData';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 interface BlogPosts {
 	posts: BlogsData[];
 }
 
 const Page = ({ posts }: BlogPosts) => {
-	const convertDate = (string: string) => {
-		const date = new Date(string);
-		return date;
-	};
-
+	const theme = useTheme();
+	const mobileScreen = useMediaQuery(theme.breakpoints.down('sm'));
 	return (
 		<>
 			<Head>
@@ -37,7 +37,8 @@ const Page = ({ posts }: BlogPosts) => {
 				<Box sx={{ mt: 3, flexBasis: '500px' }}>
 					<Fade in={true}>
 						<Typography sx={{ fontSize: 35 }} fontWeight='bold'>
-							<Typography sx={{ fontSize: 35 }}>Hey</Typography>, Wassup
+							Hey, {mobileScreen && <br />} Wassup
+							<WaveHandStyle>👋</WaveHandStyle>
 						</Typography>
 					</Fade>
 					<Fade in={true}>
@@ -91,11 +92,11 @@ const Page = ({ posts }: BlogPosts) => {
 					<Box sx={{ mt: 4 }}>
 						<Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
 							{posts
-								// .sort(
-								// 	(a, b) =>
-								// 		convertDate(b.frontmatter.date).valueOf() -
-								// 		convertDate(a.frontmatter.date).valueOf()
-								// )
+								.sort(
+									(a, b) =>
+										new Date(b.frontmatter.date).valueOf() -
+										new Date(a.frontmatter.date).valueOf()
+								)
 								.slice(0, 3)
 								.map((blogs) => (
 									<Grid item key={blogs.slug} xs={3.5} sm={4} md={4}>
