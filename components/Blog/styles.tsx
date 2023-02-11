@@ -8,5 +8,5 @@ export const ImageContainerStyle = styled('div')(({ theme }) => ({
 }));
 
 export const CardContainer = styled(Card)(({ theme }) => ({
-	boxShadow: '0px 0px 5px 1px #DC143C	',
+	boxShadow: '1px 1px 8px 1px #DC143C	',
 }));
