@@ -65,22 +65,24 @@ const Page = ({ posts }: BlogPosts) => {
 						</Fade>
 					</Link>
 				</Box>
-				<Fade in={true}>
-					<Box
-						sx={{
-							mt: 5,
-							borderRadius: '50%',
-							boxShadow: '0px 0px 8px 1px #DC143C',
-						}}>
-						<Image
-							height={140}
-							width={140}
-							className='image-style'
-							src={Nirvana}
-							alt='Nirvana'
-						/>
-					</Box>
-				</Fade>
+				{!mobileScreen && (
+					<Fade in={true}>
+						<Box
+							sx={{
+								mt: 5,
+								borderRadius: '50%',
+								boxShadow: '0px 0px 8px 1px #DC143C',
+							}}>
+							<Image
+								height={140}
+								width={140}
+								className='image-style'
+								src={Nirvana}
+								alt='Nirvana'
+							/>
+						</Box>
+					</Fade>
+				)}
 			</Box>
 			<Box sx={{ mb: 4 }}>
 				<Box sx={{ mt: 10 }}>
