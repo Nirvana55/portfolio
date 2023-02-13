@@ -23,7 +23,7 @@ interface BlogPosts {
 
 const Page = ({ posts }: BlogPosts) => {
 	const theme = useTheme();
-	const mobileScreen = useMediaQuery(theme.breakpoints.down('sm'));
+	const ipadScreen = useMediaQuery(theme.breakpoints.down('md'));
 	return (
 		<>
 			<Head>
@@ -37,7 +37,7 @@ const Page = ({ posts }: BlogPosts) => {
 				<Box sx={{ mt: 3, flexBasis: '500px' }}>
 					<Fade in={true}>
 						<Typography sx={{ fontSize: 35 }} fontWeight='bold'>
-							Hey, {mobileScreen && <br />} Wassup
+							Hey, {ipadScreen && <br />} Wassup
 							<WaveHandStyle>👋</WaveHandStyle>
 						</Typography>
 					</Fade>
@@ -65,7 +65,7 @@ const Page = ({ posts }: BlogPosts) => {
 						</Fade>
 					</Link>
 				</Box>
-				{!mobileScreen && (
+				{!ipadScreen && (
 					<Fade in={true}>
 						<Box
 							sx={{

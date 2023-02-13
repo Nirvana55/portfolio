@@ -17,7 +17,7 @@ const BlogContainer = ({ posts }: BlogContainer) => {
 				<title>N | Blogs</title>
 			</Head>
 			<Box sx={{ mb: 4 }}>
-				<Fade in={true}>
+				<Fade in>
 					<Typography marginTop={5} variant='h4' fontWeight='bold'>
 						Blogs
 					</Typography>
