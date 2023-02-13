@@ -26,12 +26,12 @@ const Posts = ({
 
 	return (
 		<Box sx={{ mb: 4 }}>
-			<Fade in={true}>
+			<Fade in>
 				<Typography fontWeight='bold' variant='h4'>
 					{title}
 				</Typography>
 			</Fade>
-			<Fade in={true}>
+			<Fade in>
 				<Box>
 					<Typography variant='caption'>
 						{dateConvert.toLocaleDateString('en-US', {
@@ -44,7 +44,7 @@ const Posts = ({
 					<Typography variant='caption'>#{about}</Typography>
 				</Box>
 			</Fade>
-			<Fade in={true}>
+			<Fade in>
 				<Typography marginTop={2} fontWeight='bold' variant='body2'>
 					{content}
 				</Typography>

@@ -21,7 +21,7 @@ interface BlogPosts {
 const Blog = ({ blogs }: BlogPosts) => {
 	const { slug, frontmatter } = blogs;
 	return (
-		<Fade in={true}>
+		<Fade in>
 			<CardContainer>
 				<ImageContainerStyle>
 					<Image
@@ -34,7 +34,7 @@ const Blog = ({ blogs }: BlogPosts) => {
 				</ImageContainerStyle>
 				<CardContent>
 					<Typography variant='body1' fontWeight='bold'>
-						{frontmatter.title}
+						{frontmatter.title.toUpperCase()}
 					</Typography>
 					<Typography variant='caption'>{frontmatter.description}</Typography>
 				</CardContent>

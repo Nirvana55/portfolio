@@ -16,7 +16,7 @@ const About = () => {
 				<title>N | About</title>
 			</Head>
 			<Box>
-				<Fade in={true}>
+				<Fade in>
 					<Typography marginTop={5} variant='h4' fontWeight='bold'>
 						About Me
 					</Typography>
@@ -27,7 +27,7 @@ const About = () => {
 					flexDirection={ipadScreen ? 'column' : 'row'}
 					sx={{ p: '2rem 1rem' }}>
 					<Box>
-						<Fade in={true}>
+						<Fade in>
 							<Box
 								sx={{
 									border: '2px solid white',
@@ -39,19 +39,19 @@ const About = () => {
 							</Box>
 						</Fade>
 
-						<Fade in={true}>
+						<Fade in>
 							<Typography marginTop='1rem' variant='h6'>
 								Nikhil Lama
 							</Typography>
 						</Fade>
-						<Fade in={true}>
+						<Fade in>
 							<Typography marginTop='1rem' variant='caption'>
 								WEB DEVELOPER / NETWORK SECURITY
 							</Typography>
 						</Fade>
 					</Box>
 
-					<Fade in={true}>
+					<Fade in>
 						<Box marginLeft={ipadScreen ? 0 : 4}>
 							<Typography variant='body1' sx={{ lineHeight: '30px' }}>
 								Full stack web developer who has worked on sites for small and

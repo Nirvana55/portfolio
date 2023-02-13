@@ -7,7 +7,7 @@ const Footer = () => {
 			sx={{ marginTop: 'auto', marginBottom: 1 }}
 			component='footer'
 			textAlign='center'>
-			<Fade in={true}>
+			<Fade in>
 				<Typography variant='body2'>Created by Nikhil Lama.</Typography>
 			</Fade>
 		</Box>
