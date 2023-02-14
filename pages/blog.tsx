@@ -5,12 +5,16 @@ import React from 'react';
 import Blog from '../components/Blog';
 import { BlogsData } from '../types/blogData';
 import { getAllPosts } from '../utils/md';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 interface BlogContainer {
 	posts: BlogsData[];
 }
 
 const BlogContainer = ({ posts }: BlogContainer) => {
+	const theme = useTheme();
+	const mobileScreen = useMediaQuery(theme.breakpoints.down('sm'));
 	return (
 		<>
 			<Head>
@@ -24,7 +28,11 @@ const BlogContainer = ({ posts }: BlogContainer) => {
 				</Fade>
 
 				<Box sx={{ mt: 3 }}>
-					<Grid container spacing={2} columns={{ xs: 2, sm: 8, md: 12 }}>
+					<Grid
+						container
+						justifyContent={mobileScreen ? 'center' : ''}
+						spacing={2}
+						columns={{ xs: 2, sm: 8, md: 12 }}>
 						{posts
 							.sort(
 								(a, b) =>

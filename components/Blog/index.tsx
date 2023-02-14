@@ -32,7 +32,7 @@ const Blog = ({ blogs }: BlogPosts) => {
 						className='image-card'
 					/>
 				</ImageContainerStyle>
-				<CardContent>
+				<CardContent sx={{ height: '120px' }}>
 					<Typography variant='body1' fontWeight='bold'>
 						{frontmatter.title.toUpperCase()}
 					</Typography>
