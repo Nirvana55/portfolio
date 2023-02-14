@@ -23,6 +23,7 @@ interface BlogPosts {
 
 const Page = ({ posts }: BlogPosts) => {
 	const theme = useTheme();
+	const mobileScreen = useMediaQuery(theme.breakpoints.down('sm'));
 	const ipadScreen = useMediaQuery(theme.breakpoints.down('md'));
 	return (
 		<>
@@ -91,8 +92,12 @@ const Page = ({ posts }: BlogPosts) => {
 							Recent Posts
 						</Typography>
 					</Fade>
-					<Box sx={{ mt: 4 }}>
-						<Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
+					<Box sx={{ mt: 4, flexGrow: 1 }}>
+						<Grid
+							container
+							justifyContent={mobileScreen ? 'center' : ''}
+							spacing={2}
+							columns={{ xs: 4, sm: 8, md: 12 }}>
 							{posts
 								.sort(
 									(a, b) =>
@@ -101,7 +106,7 @@ const Page = ({ posts }: BlogPosts) => {
 								)
 								.slice(0, 3)
 								.map((blogs) => (
-									<Grid item key={blogs.slug} xs={3.5} sm={4} md={4}>
+									<Grid item key={blogs.slug} xs={3.8} sm={4} md={4}>
 										<Blog blogs={blogs} />
 									</Grid>
 								))}

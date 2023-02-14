@@ -1,6 +1,7 @@
 import { Box, Fade, Typography } from '@mui/material';
 import fs from 'fs';
 import matter from 'gray-matter';
+import Head from 'next/head';
 import path from 'path';
 import { FrontMatter } from '../../types/blogData';
 import { getFileContent } from '../../utils/md';
@@ -25,31 +26,36 @@ const Posts = ({
 	const dateConvert = new Date(date);
 
 	return (
-		<Box sx={{ mb: 4 }}>
-			<Fade in>
-				<Typography fontWeight='bold' variant='h4'>
-					{title}
-				</Typography>
-			</Fade>
-			<Fade in>
-				<Box>
-					<Typography variant='caption'>
-						{dateConvert.toLocaleDateString('en-US', {
-							year: 'numeric',
-							month: 'long',
-							day: 'numeric',
-						})}
+		<>
+			<Head>
+				<title>N | {slug}</title>
+			</Head>
+			<Box sx={{ mb: 4 }}>
+				<Fade in>
+					<Typography fontWeight='bold' variant='h4'>
+						{title}
 					</Typography>
-					&nbsp;
-					<Typography variant='caption'>#{about}</Typography>
-				</Box>
-			</Fade>
-			<Fade in>
-				<Typography marginTop={2} fontWeight='bold' variant='body2'>
-					{content}
-				</Typography>
-			</Fade>
-		</Box>
+				</Fade>
+				<Fade in>
+					<Box>
+						<Typography variant='caption'>
+							{dateConvert.toLocaleDateString('en-US', {
+								year: 'numeric',
+								month: 'long',
+								day: 'numeric',
+							})}
+						</Typography>
+						&nbsp;
+						<Typography variant='caption'>#{about}</Typography>
+					</Box>
+				</Fade>
+				<Fade in>
+					<Typography marginTop={2} fontWeight='bold' variant='body2'>
+						{content}
+					</Typography>
+				</Fade>
+			</Box>
+		</>
 	);
 };
 

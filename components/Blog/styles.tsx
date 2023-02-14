@@ -9,4 +9,5 @@ export const ImageContainerStyle = styled('div')(({ theme }) => ({
 
 export const CardContainer = styled(Card)(({ theme }) => ({
 	boxShadow: '1px 1px 8px 1px #DC143C	',
+	height: '100%',
 }));
