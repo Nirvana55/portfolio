@@ -1,4 +1,4 @@
-import { Box, Fade, Typography } from '@mui/material';
+import { Box, Chip, Fade, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import Nirvana from '../public/nirvana.jpg';
@@ -57,12 +57,19 @@ const About = () => {
 								Full stack web developer who has worked on sites for small and
 								medium-sized enterprises. I can assist you in advertising your
 								services and design up a whole website to boost your business.
-								Profound in HTML,CSS, the MERN stack(React/Node/Mongodb) and
-								wordpress.
+								Profound in HTML,CSS, the MERN stack and wordpress.
 							</Typography>
 							<Typography variant='h6' fontWeight='bold' marginTop={2}>
-								Timeline:
+								Skills:
 							</Typography>
+							<Stack marginTop={1} spacing={1} direction='row'>
+								<Chip sx={{ cursor: 'pointer' }} label='React' />
+								<Chip sx={{ cursor: 'pointer' }} label='Node' />
+								<Chip sx={{ cursor: 'pointer' }} label='MongoDB' />
+								<Chip sx={{ cursor: 'pointer' }} label='Typescript' />
+								<Chip sx={{ cursor: 'pointer' }} label='<HTML/>' />
+								<Chip sx={{ cursor: 'pointer' }} label='CSS' />
+							</Stack>
 						</Box>
 					</Fade>
 				</Box>
