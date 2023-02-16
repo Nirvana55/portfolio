@@ -28,23 +28,29 @@ const BlogContainer = ({ posts }: BlogContainer) => {
 				</Fade>
 
 				<Box sx={{ mt: 3 }}>
-					<Grid
-						container
-						justifyContent={mobileScreen ? 'center' : ''}
-						spacing={2}
-						columns={{ xs: 2, sm: 8, md: 12 }}>
-						{posts
-							.sort(
-								(a, b) =>
-									new Date(b.frontmatter.date).valueOf() -
-									new Date(a.frontmatter.date).valueOf()
-							)
-							.map((posts) => (
-								<Grid item xs={3.5} sm={4} md={4} key={posts.slug}>
-									<Blog blogs={posts} />
-								</Grid>
-							))}
-					</Grid>
+					{posts ? (
+						<Grid
+							container
+							justifyContent={mobileScreen ? 'center' : ''}
+							spacing={2}
+							columns={{ xs: 2, sm: 8, md: 12 }}>
+							{posts
+								.sort(
+									(a, b) =>
+										new Date(b.frontmatter.date).valueOf() -
+										new Date(a.frontmatter.date).valueOf()
+								)
+								.map((posts) => (
+									<Grid item xs={3.5} sm={4} md={4} key={posts.slug}>
+										<Blog blogs={posts} />
+									</Grid>
+								))}
+						</Grid>
+					) : (
+						<Typography marginTop={10} textAlign='center' component='h6'>
+							Sorry, No Posts yet.
+						</Typography>
+					)}
 				</Box>
 			</Box>
 		</>

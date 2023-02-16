@@ -85,6 +85,7 @@ const Page = ({ posts }: BlogPosts) => {
 					</Fade>
 				)}
 			</Box>
+
 			<Box sx={{ mb: 4 }}>
 				<Box sx={{ mt: 10 }}>
 					<Fade in={true}>
@@ -92,36 +93,44 @@ const Page = ({ posts }: BlogPosts) => {
 							Recent Posts
 						</Typography>
 					</Fade>
-					<Box sx={{ mt: 4, flexGrow: 1 }}>
-						<Grid
-							container
-							justifyContent={mobileScreen ? 'center' : ''}
-							spacing={2}
-							columns={{ xs: 4, sm: 8, md: 12 }}>
-							{posts
-								.sort(
-									(a, b) =>
-										new Date(b.frontmatter.date).valueOf() -
-										new Date(a.frontmatter.date).valueOf()
-								)
-								.slice(0, 3)
-								.map((blogs) => (
-									<Grid item key={blogs.slug} xs={3.8} sm={4} md={4}>
-										<Blog blogs={blogs} />
-									</Grid>
-								))}
-						</Grid>
-					</Box>
+					{posts ? (
+						<>
+							<Box sx={{ mt: 4, flexGrow: 1 }}>
+								<Grid
+									container
+									justifyContent={mobileScreen ? 'center' : ''}
+									spacing={2}
+									columns={{ xs: 4, sm: 8, md: 12 }}>
+									{posts
+										.sort(
+											(a, b) =>
+												new Date(b.frontmatter.date).valueOf() -
+												new Date(a.frontmatter.date).valueOf()
+										)
+										.slice(0, 3)
+										.map((blogs) => (
+											<Grid item key={blogs.slug} xs={3.8} sm={4} md={4}>
+												<Blog blogs={blogs} />
+											</Grid>
+										))}
+								</Grid>
+							</Box>
 
-					<Box sx={{ float: 'right', mt: 3, mb: 3 }}>
-						<Link href='/blog'>
-							<Fade in={true}>
-								<SeeAllPostButtonStyle>
-									See All Posts <ArrowRightAltIcon sx={{ pl: 1 }} />
-								</SeeAllPostButtonStyle>
-							</Fade>
-						</Link>
-					</Box>
+							<Box sx={{ float: 'right', mt: 3, mb: 3 }}>
+								<Link href='/blog'>
+									<Fade in={true}>
+										<SeeAllPostButtonStyle>
+											See All Posts <ArrowRightAltIcon sx={{ pl: 1 }} />
+										</SeeAllPostButtonStyle>
+									</Fade>
+								</Link>
+							</Box>
+						</>
+					) : (
+						<Typography marginTop={10} textAlign='center' component='h6'>
+							Sorry, No Posts yet.
+						</Typography>
+					)}
 				</Box>
 			</Box>
 		</>
