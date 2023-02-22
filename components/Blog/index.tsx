@@ -19,7 +19,7 @@ interface BlogPosts {
 }
 
 const Blog = ({ blogs }: BlogPosts) => {
-	const { slug, frontmatter } = blogs;
+	const { slug, frontMatter } = blogs;
 	return (
 		<Fade in>
 			<CardContainer>
@@ -34,9 +34,9 @@ const Blog = ({ blogs }: BlogPosts) => {
 				</ImageContainerStyle>
 				<CardContent sx={{ height: '120px' }}>
 					<Typography variant='body1' fontWeight='bold'>
-						{frontmatter.title.toUpperCase()}
+						{frontMatter.title.toUpperCase()}
 					</Typography>
-					<Typography variant='caption'>{frontmatter.description}</Typography>
+					<Typography variant='caption'>{frontMatter.description}</Typography>
 				</CardContent>
 				<CardActions sx={{ float: 'right', marginBottom: 0.3 }}>
 					<Link href={`blog/${slug}`}>

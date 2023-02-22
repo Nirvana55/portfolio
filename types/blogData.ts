@@ -1,6 +1,6 @@
 export interface BlogsData {
 	slug: string;
-	frontmatter: FrontMatter;
+	frontMatter: FrontMatter;
 }
 
 export interface FrontMatter {
