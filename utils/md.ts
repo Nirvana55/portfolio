@@ -25,11 +25,11 @@ export const getAllPosts = (): BlogsData[] => {
 
 		// naming object as frontmatter
 		// and parsing with gray matter
-		const { data: frontmatter } = matter(getMetaMarkdownInfo);
+		const { data: frontMatter } = matter(getMetaMarkdownInfo);
 
 		return {
 			slug,
-			frontmatter,
+			frontMatter,
 		};
 	});
 

@@ -7,6 +7,7 @@ import { BlogsData } from '../types/blogData';
 import { getAllPosts } from '../utils/md';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import WorkInProgress from '../components/WorkInProgress';
 
 interface BlogContainer {
 	posts: BlogsData[];
@@ -15,6 +16,7 @@ interface BlogContainer {
 const BlogContainer = ({ posts }: BlogContainer) => {
 	const theme = useTheme();
 	const mobileScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
 	return (
 		<>
 			<Head>
@@ -28,7 +30,7 @@ const BlogContainer = ({ posts }: BlogContainer) => {
 				</Fade>
 
 				<Box sx={{ mt: 3 }}>
-					{posts ? (
+					{posts.filter((item) => item.frontMatter.isPublished).length > 0 ? (
 						<Grid
 							container
 							justifyContent={mobileScreen ? 'center' : ''}
@@ -37,8 +39,8 @@ const BlogContainer = ({ posts }: BlogContainer) => {
 							{posts
 								.sort(
 									(a, b) =>
-										new Date(b.frontmatter.date).valueOf() -
-										new Date(a.frontmatter.date).valueOf()
+										new Date(b.frontMatter.date).valueOf() -
+										new Date(a.frontMatter.date).valueOf()
 								)
 								.map((posts) => (
 									<Grid item xs={3.5} sm={4} md={4} key={posts.slug}>
@@ -47,9 +49,9 @@ const BlogContainer = ({ posts }: BlogContainer) => {
 								))}
 						</Grid>
 					) : (
-						<Typography marginTop={10} textAlign='center' component='h6'>
-							Sorry, No Posts yet.
-						</Typography>
+						<>
+							<WorkInProgress />
+						</>
 					)}
 				</Box>
 			</Box>

@@ -93,7 +93,7 @@ const Page = ({ posts }: BlogPosts) => {
 							Recent Posts
 						</Typography>
 					</Fade>
-					{posts ? (
+					{posts.filter((item) => item.frontMatter.isPublished).length > 0 ? (
 						<>
 							<Box sx={{ mt: 4, flexGrow: 1 }}>
 								<Grid
@@ -104,8 +104,8 @@ const Page = ({ posts }: BlogPosts) => {
 									{posts
 										.sort(
 											(a, b) =>
-												new Date(b.frontmatter.date).valueOf() -
-												new Date(a.frontmatter.date).valueOf()
+												new Date(b.frontMatter.date).valueOf() -
+												new Date(a.frontMatter.date).valueOf()
 										)
 										.slice(0, 3)
 										.map((blogs) => (
