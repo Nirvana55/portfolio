@@ -9,6 +9,7 @@ import Head from 'next/head';
 const About = () => {
 	const theme = useTheme();
 	const ipadScreen = useMediaQuery(theme.breakpoints.down('md'));
+	const mobileScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
 	return (
 		<>
@@ -62,7 +63,10 @@ const About = () => {
 							<Typography variant='h6' fontWeight='bold' marginTop={2}>
 								Skills:
 							</Typography>
-							<Stack marginTop={1} spacing={1} direction='row'>
+							<Stack
+								marginTop={1}
+								spacing={1}
+								direction={mobileScreen ? 'column' : 'row'}>
 								<Chip sx={{ cursor: 'pointer' }} label='React' />
 								<Chip sx={{ cursor: 'pointer' }} label='Node' />
 								<Chip sx={{ cursor: 'pointer' }} label='MongoDB' />
