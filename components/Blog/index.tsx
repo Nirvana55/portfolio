@@ -1,10 +1,9 @@
 import {
+	Box,
 	Button,
-	Card,
 	CardActions,
 	CardContent,
 	Fade,
-	Grid,
 	Typography,
 } from '@mui/material';
 import React from 'react';
@@ -21,32 +20,36 @@ interface BlogPosts {
 const Blog = ({ blogs }: BlogPosts) => {
 	const { slug, frontMatter } = blogs;
 	return (
-		<Fade in>
-			<CardContainer>
-				<ImageContainerStyle>
-					<Image
-						alt='Image Alt'
-						src={Nirvana}
-						layout='fill'
-						objectFit='cover'
-						className='image-card'
-					/>
-				</ImageContainerStyle>
-				<CardContent sx={{ height: '120px' }}>
-					<Typography variant='body1' fontWeight='bold'>
-						{frontMatter.title.toUpperCase()}
-					</Typography>
-					<Typography variant='caption'>{frontMatter.description}</Typography>
-				</CardContent>
-				<CardActions sx={{ float: 'right', marginBottom: 0.3 }}>
-					<Link href={`blog/${slug}`}>
-						<Button sx={{ color: 'white' }} size='small'>
-							Read More
-						</Button>
-					</Link>
-				</CardActions>
-			</CardContainer>
-		</Fade>
+		<Link href={`blog/${slug}`} legacyBehavior>
+			<a>
+				<Fade in>
+					<CardContainer sx={{ cursor: 'pointer' }}>
+						<ImageContainerStyle>
+							<Image
+								alt='Image Alt'
+								src={Nirvana}
+								layout='fill'
+								objectFit='cover'
+								className='image-card'
+							/>
+						</ImageContainerStyle>
+						<CardContent sx={{ height: '120px' }}>
+							<Typography variant='body1' fontWeight='bold'>
+								{frontMatter.title.toUpperCase()}
+							</Typography>
+							<Typography variant='caption'>
+								{frontMatter.description}
+							</Typography>
+						</CardContent>
+						<CardActions sx={{ float: 'right', marginBottom: 0.3 }}>
+							<Button sx={{ color: 'white' }} size='small'>
+								Read More
+							</Button>
+						</CardActions>
+					</CardContainer>
+				</Fade>
+			</a>
+		</Link>
 	);
 };
 

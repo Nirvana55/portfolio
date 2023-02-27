@@ -1,13 +1,15 @@
-import { Box, Fade, Grid, Typography } from '@mui/material';
+import { Box, Fade, Grid, TextField, Typography } from '@mui/material';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
-import React from 'react';
+import React, { useState } from 'react';
 import Blog from '../components/Blog';
 import { BlogsData } from '../types/blogData';
 import { getAllPosts } from '../utils/md';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import InputAdornment from '@mui/material/InputAdornment';
 import WorkInProgress from '../components/WorkInProgress';
+import SearchIcon from '@mui/icons-material/Search';
 
 interface BlogContainer {
 	posts: BlogsData[];
@@ -15,7 +17,9 @@ interface BlogContainer {
 
 const BlogContainer = ({ posts }: BlogContainer) => {
 	const theme = useTheme();
+	const [searchValue, setSearchValue] = useState('');
 	const mobileScreen = useMediaQuery(theme.breakpoints.down('sm'));
+	const ipadScreen = useMediaQuery(theme.breakpoints.down('md'));
 
 	return (
 		<>
@@ -29,8 +33,29 @@ const BlogContainer = ({ posts }: BlogContainer) => {
 					</Typography>
 				</Fade>
 
+				<Fade in>
+					<TextField
+						sx={{ mt: 2, width: { md: '50%' } }}
+						type='text'
+						name='search'
+						placeholder='Search Blogs'
+						variant='outlined'
+						fullWidth={ipadScreen ? true : false}
+						value={searchValue}
+						onChange={(e) => setSearchValue(() => e.target.value)}
+						InputProps={{
+							endAdornment: (
+								<InputAdornment sx={{ cursor: 'pointer' }} position='end'>
+									<SearchIcon />
+								</InputAdornment>
+							),
+						}}
+					/>
+				</Fade>
+
 				<Box sx={{ mt: 3 }}>
-					{posts.filter((item) => item.frontMatter.isPublished).length > 0 ? (
+					{posts.filter((item) => item.frontMatter.title.includes(searchValue))
+						.length > 0 ? (
 						<Grid
 							container
 							justifyContent={mobileScreen ? 'center' : ''}
@@ -42,6 +67,7 @@ const BlogContainer = ({ posts }: BlogContainer) => {
 										new Date(b.frontMatter.date).valueOf() -
 										new Date(a.frontMatter.date).valueOf()
 								)
+								.filter((item) => item.frontMatter.isPublished)
 								.map((posts) => (
 									<Grid item xs={3.5} sm={4} md={4} key={posts.slug}>
 										<Blog blogs={posts} />
@@ -49,9 +75,7 @@ const BlogContainer = ({ posts }: BlogContainer) => {
 								))}
 						</Grid>
 					) : (
-						<>
-							<WorkInProgress />
-						</>
+						<WorkInProgress />
 					)}
 				</Box>
 			</Box>

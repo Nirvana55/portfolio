@@ -30,13 +30,11 @@ const Posts = ({
 			<Head>
 				<title>N | {slug}</title>
 			</Head>
-			<Box sx={{ mb: 4 }}>
-				<Fade in>
+			<Fade in>
+				<Box sx={{ mb: 4 }}>
 					<Typography fontWeight='bold' variant='h4'>
 						{title}
 					</Typography>
-				</Fade>
-				<Fade in>
 					<Box>
 						<Typography variant='caption'>
 							{dateConvert.toLocaleDateString('en-US', {
@@ -48,13 +46,11 @@ const Posts = ({
 						&nbsp;
 						<Typography variant='caption'>#{about}</Typography>
 					</Box>
-				</Fade>
-				<Fade in>
 					<Typography marginTop={2} fontWeight='bold' variant='body2'>
 						{content}
 					</Typography>
-				</Fade>
-			</Box>
+				</Box>
+			</Fade>
 		</>
 	);
 };
