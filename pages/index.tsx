@@ -96,25 +96,38 @@ const Page = ({ posts }: BlogPosts) => {
 
 						<Fade in>
 							<Box sx={{ mt: 4, flexGrow: 1 }}>
-								<Grid
-									container
-									justifyContent={mobileScreen ? 'center' : ''}
-									spacing={2.5}
-									columns={{ xs: 4, sm: 8, md: 12 }}>
-									{posts
-										.sort(
-											(a, b) =>
-												new Date(b.frontMatter.date).valueOf() -
-												new Date(a.frontMatter.date).valueOf()
-										)
-										.slice(0, 3)
-										.filter((item) => item.frontMatter.isPublished)
-										.map((blogs) => (
-											<Grid item key={blogs.slug} xs={3.8} sm={4} md={4}>
-												<Blog blogs={blogs} />
-											</Grid>
-										))}
-								</Grid>
+								{posts.filter((item) => item.frontMatter.isPublished).length >
+								0 ? (
+									<Grid
+										container
+										justifyContent={mobileScreen ? 'center' : ''}
+										spacing={2.5}
+										columns={{ xs: 4, sm: 8, md: 12 }}>
+										{posts
+											.sort(
+												(a, b) =>
+													new Date(b.frontMatter.date).valueOf() -
+													new Date(a.frontMatter.date).valueOf()
+											)
+											.slice(0, 3)
+											.filter((item) => item.frontMatter.isPublished)
+											.map((blogs) => (
+												<Grid item key={blogs.slug} xs={3.8} sm={4} md={4}>
+													<Blog blogs={blogs} />
+												</Grid>
+											))}
+									</Grid>
+								) : (
+									<Box
+										sx={{ mt: 8, height: '110px' }}
+										textAlign='center'
+										alignSelf='center'
+										justifySelf='center'>
+										<Typography variant='body2'>
+											Sorry, Work In Progress
+										</Typography>
+									</Box>
+								)}
 							</Box>
 						</Fade>
 

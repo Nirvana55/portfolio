@@ -14,7 +14,7 @@ const WorkInProgress = () => {
 					src={WorkInProgressImage}
 				/>
 				<Typography variant='h5' fontWeight='semi-bold'>
-					Work In Progress
+					Sorry, Work In Progress.
 				</Typography>
 			</Box>
 		</Fade>
