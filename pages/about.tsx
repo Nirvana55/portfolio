@@ -26,7 +26,7 @@ const About = () => {
 				<Box
 					display='flex'
 					flexDirection={ipadScreen ? 'column' : 'row'}
-					sx={{ p: '2rem 1rem' }}>
+					sx={{ pt: 5 }}>
 					<Box>
 						<Fade in>
 							<Box

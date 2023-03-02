@@ -34,50 +34,53 @@ const BlogContainer = ({ posts }: BlogContainer) => {
 				</Fade>
 
 				<Fade in>
-					<TextField
-						sx={{ mt: 2, width: { md: '50%' } }}
-						type='text'
-						name='search'
-						placeholder='Search Blogs'
-						variant='outlined'
-						fullWidth={ipadScreen ? true : false}
-						value={searchValue}
-						onChange={(e) => setSearchValue(() => e.target.value)}
-						InputProps={{
-							endAdornment: (
-								<InputAdornment sx={{ cursor: 'pointer' }} position='end'>
-									<SearchIcon />
-								</InputAdornment>
-							),
-						}}
-					/>
-				</Fade>
+					<Box>
+						<TextField
+							sx={{ mt: 2, width: { md: '50%' } }}
+							type='text'
+							name='search'
+							placeholder='Search Blogs'
+							variant='outlined'
+							fullWidth={ipadScreen ? true : false}
+							value={searchValue}
+							onChange={(e) => setSearchValue(() => e.target.value)}
+							InputProps={{
+								endAdornment: (
+									<InputAdornment sx={{ cursor: 'pointer' }} position='end'>
+										<SearchIcon />
+									</InputAdornment>
+								),
+							}}
+						/>
 
-				<Box sx={{ mt: 3 }}>
-					{posts.filter((item) => item.frontMatter.title.includes(searchValue))
-						.length > 0 ? (
-						<Grid
-							container
-							justifyContent={mobileScreen ? 'center' : ''}
-							spacing={2}
-							columns={{ xs: 2, sm: 8, md: 12 }}>
-							{posts
-								.sort(
-									(a, b) =>
-										new Date(b.frontMatter.date).valueOf() -
-										new Date(a.frontMatter.date).valueOf()
-								)
-								.filter((item) => item.frontMatter.isPublished)
-								.map((posts) => (
-									<Grid item xs={3.5} sm={4} md={4} key={posts.slug}>
-										<Blog blogs={posts} />
-									</Grid>
-								))}
-						</Grid>
-					) : (
-						<WorkInProgress />
-					)}
-				</Box>
+						<Box sx={{ mt: 3 }}>
+							{posts.filter((item) =>
+								item.frontMatter.title.includes(searchValue)
+							).length > 0 ? (
+								<Grid
+									container
+									justifyContent={mobileScreen ? 'center' : ''}
+									spacing={2}
+									columns={{ xs: 2, sm: 8, md: 12 }}>
+									{posts
+										.sort(
+											(a, b) =>
+												new Date(b.frontMatter.date).valueOf() -
+												new Date(a.frontMatter.date).valueOf()
+										)
+										.filter((item) => item.frontMatter.isPublished)
+										.map((posts) => (
+											<Grid item xs={3.5} sm={4} md={4} key={posts.slug}>
+												<Blog blogs={posts} />
+											</Grid>
+										))}
+								</Grid>
+							) : (
+								<WorkInProgress />
+							)}
+						</Box>
+					</Box>
+				</Fade>
 			</Box>
 		</>
 	);
