@@ -9,6 +9,7 @@ const NavBar = () => {
 		{ id: 1, name: 'Home', link: '/' },
 		{ id: 2, name: 'About', link: '/about' },
 		{ id: 3, name: 'Blog', link: '/blog' },
+		{ id: 4, name: 'Projects', link: '/projects' },
 	];
 
 	// const handleDrawerToggle = () => {
