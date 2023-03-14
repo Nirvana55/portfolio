@@ -2,9 +2,11 @@ import { Box, Fade, Typography } from '@mui/material';
 import fs from 'fs';
 import matter from 'gray-matter';
 import Head from 'next/head';
+import Image from 'next/image';
 import path from 'path';
 import { FrontMatter } from '../../types/blogData';
 import { getFileContent } from '../../utils/md';
+import ReactMarkdown from 'react-markdown';
 
 interface SlugPathType {
 	params: {
@@ -19,7 +21,7 @@ interface PostsPropType {
 }
 
 const Posts = ({
-	blogData: { title, date, about },
+	blogData: { title, date, about, image },
 	content,
 	slug,
 }: PostsPropType) => {
@@ -35,7 +37,7 @@ const Posts = ({
 					<Typography fontWeight='bold' variant='h4'>
 						{title}
 					</Typography>
-					<Box>
+					<Box mb={2}>
 						<Typography variant='caption'>
 							{dateConvert.toLocaleDateString('en-US', {
 								year: 'numeric',
@@ -46,9 +48,8 @@ const Posts = ({
 						&nbsp;
 						<Typography variant='caption'>#{about}</Typography>
 					</Box>
-					<Typography marginTop={2} fontWeight='bold' variant='body2'>
-						{content}
-					</Typography>
+					<Image src={image} alt='photo' width={1000} height={600} />
+					<ReactMarkdown>{content}</ReactMarkdown>
 				</Box>
 			</Fade>
 		</>
