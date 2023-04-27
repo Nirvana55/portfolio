@@ -51,7 +51,7 @@ const Page = ({ posts }: BlogPosts) => {
 								Full stack web developer who has worked on sites for small and
 								medium-sized enterprises. I can assist you in advertising your
 								services and design up a whole website to boost your business.
-								Profound in HTML,CSS, the MERN stack(React/Node/Mongodb) and
+								Profound in Web Development, MERN stack(React/Node/Mongodb) and
 								wordpress.
 							</Typography>
 							<Link href='/about'>
