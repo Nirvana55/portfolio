@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import WorkInProgress from "../components/WorkInProgress";
+import { config } from "../config";
 
 const NewsBoard = (props: NewsBoardProps) => {
   const theme = useTheme();
@@ -32,7 +33,7 @@ const NewsBoard = (props: NewsBoardProps) => {
         </Box>
       </Fade>
 
-      {props.post.length > 0 ? (
+      {props.post?.length > 0 ? (
         <Fade in>
           <Box>
             <TextField
@@ -64,7 +65,8 @@ export default NewsBoard;
 
 export async function getServerSideProps() {
   try {
-    let response = await fetch("http://localhost:3000/api/linkPost");
+    const apiUrl = config.apiUrl;
+    let response = await fetch(`${apiUrl}api/linkPost`);
     let posts = await response.json();
 
     return {
