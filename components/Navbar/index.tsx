@@ -30,7 +30,7 @@ const NavBar = () => {
     { id: 2, name: "About", link: "/about" },
     { id: 3, name: "Blog", link: "/blog" },
     { id: 4, name: "Projects", link: "/projects" },
-    { id: 4, name: "News Board", link: "/newsboard" },
+    { id: 5, name: "News-Feed", link: "/newsboard" },
   ];
 
   const handleDrawerToggle = () => {
@@ -110,18 +110,41 @@ const NavBar = () => {
             >
               {navList.map((item) => (
                 <Box
-                  sx={{ display: { xs: "none", sm: "flex" } }}
+                  sx={{
+                    display: { xs: "none", sm: "flex" },
+                  }}
                   component="a"
                   key={item.id}
                   href={item.link}
                 >
-                  <Button sx={{ color: "#fff" }}>{item.name}</Button>
+                  <Typography
+                    sx={{
+                      color: "#fff",
+                      fontWeight: 500,
+                      fontSize: "0.875rem",
+                      textTransform: "uppercase",
+                      marginRight: "0.875rem",
+                      "&:after": {
+                        display: "block",
+                        content: '""',
+                        borderBottom: "2px solid #DC143C",
+                        transform: "scaleX(0)",
+                        transformOrigin: "0% 50%",
+                        transition: `transform ${theme.transitions.duration.short}ms ease-in-out`,
+                      },
+                      "&:hover:after": {
+                        transform: "scaleX(1)",
+                      },
+                    }}
+                  >
+                    {item.name}
+                  </Typography>
                 </Box>
               ))}
               <Box
                 component="a"
                 href="https://github.com/Nirvana55"
-                sx={{ cursor: "pointer", ml: "0.875rem" }}
+                sx={{ cursor: "pointer" }}
               >
                 <GitHubIcon sx={{ color: "white" }} />
               </Box>
