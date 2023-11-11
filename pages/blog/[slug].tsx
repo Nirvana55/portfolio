@@ -1,88 +1,92 @@
-import { Box, Fade, Typography } from '@mui/material';
-import fs from 'fs';
-import matter from 'gray-matter';
-import Head from 'next/head';
-import Image from 'next/image';
-import path from 'path';
-import { FrontMatter } from '../../types/blogData';
-import { getFileContent } from '../../utils/md';
-import ReactMarkdown from 'react-markdown';
+import { Box, CircularProgress, Fade, Typography } from "@mui/material";
+import fs from "fs";
+import matter from "gray-matter";
+import Head from "next/head";
+import Image from "next/image";
+import path from "path";
+import { FrontMatter } from "../../types/blogData";
+import { getFileContent } from "../../utils/md";
+import ReactMarkdown from "react-markdown";
 
 interface SlugPathType {
-	params: {
-		slug: string;
-	};
+  params: {
+    slug: string;
+  };
 }
 
 interface PostsPropType {
-	slug: string;
-	content: string;
-	blogData: FrontMatter;
+  slug: string;
+  content: string;
+  blogData: FrontMatter;
 }
 
 const Posts = ({
-	blogData: { title, date, about, image },
-	content,
-	slug,
+  blogData: { title, date, about, image },
+  content,
+  slug,
 }: PostsPropType) => {
-	const dateConvert = new Date(date);
+  const dateConvert = new Date(date);
 
-	return (
-		<>
-			<Head>
-				<title>N | {slug}</title>
-			</Head>
-			<Fade in>
-				<Box sx={{ mb: 4 }}>
-					<Typography fontWeight='bold' variant='h4'>
-						{title}
-					</Typography>
-					<Box mb={2}>
-						<Typography variant='caption'>
-							{dateConvert.toLocaleDateString('en-US', {
-								year: 'numeric',
-								month: 'long',
-								day: 'numeric',
-							})}
-						</Typography>
-						&nbsp;
-						<Typography variant='caption'>#{about}</Typography>
-					</Box>
-					<Image src={image} alt='photo' width={1000} height={600} />
-					<ReactMarkdown>{content}</ReactMarkdown>
-				</Box>
-			</Fade>
-		</>
-	);
+  return (
+    <>
+      <Head>
+        <title>N | {slug}</title>
+      </Head>
+      <Fade in>
+        <Box sx={{ mb: 4 }}>
+          <Typography fontWeight="bold" variant="h4">
+            {title}
+          </Typography>
+          <Box mb={2}>
+            <Typography variant="caption">
+              {dateConvert.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </Typography>
+            &nbsp;
+            <Typography variant="caption">#{about}</Typography>
+          </Box>
+          {!image ? (
+            <CircularProgress />
+          ) : (
+            <Image src={image} alt="photo" width={1000} height={600} />
+          )}
+          <ReactMarkdown>{content}</ReactMarkdown>
+        </Box>
+      </Fade>
+    </>
+  );
 };
 
 export default Posts;
 
 export const getStaticPaths = async () => {
-	const posts = fs.readdirSync(path.join('content'));
+  const posts = fs.readdirSync(path.join("content"));
 
-	const paths = posts.map((posts) => ({
-		params: {
-			slug: posts.replace('.md', ''),
-		},
-	}));
+  const paths = posts.map((posts) => ({
+    params: {
+      slug: posts.replace(".md", ""),
+    },
+  }));
 
-	return {
-		paths,
-		fallback: false,
-	};
+  return {
+    paths,
+    fallback: false,
+  };
 };
 
 export const getStaticProps = async ({ params: { slug } }: SlugPathType) => {
-	const getMetaMarkdownInfo = getFileContent('content', slug + '.md');
+  const getMetaMarkdownInfo = getFileContent("content", slug + ".md");
 
-	const { data: frontmatter, content } = matter(getMetaMarkdownInfo);
+  const { data: frontmatter, content } = matter(getMetaMarkdownInfo);
 
-	return {
-		props: {
-			blogData: frontmatter,
-			slug,
-			content,
-		},
-	};
+  return {
+    props: {
+      blogData: frontmatter,
+      slug,
+      content,
+    },
+  };
 };
