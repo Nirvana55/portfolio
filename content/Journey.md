@@ -1,7 +1,7 @@
 ---
 title: I am doing this year will you ?
 description: What does your happiness define ?
-date: '2023-02-13'
+date: "2023-02-13"
 about: Tech
 image: /coding.jpg
 isPublished: true
@@ -13,11 +13,9 @@ I've been surfing the internet for a long time. Technology has come a long way. 
 
 This year, I'll be focused on becoming a competent developer and writing a lot of articles about the things I learn every day and the challenges I experience along the way. My goal for this year is to learn React in depth using Typescript and other libraries such as
 
-- StoryBook
-
-- Cypress
-
-- Prisma
+(1) StoryBook
+(2) Cypress
+(3) Prisma
 
 By the end of the year, I aim to be a developer contributing to the react community and multiple open source projects. Many internal projects are also on my mind, some of which I have already started. I'm hoping that this year will be a good start for the software that will be released.
 

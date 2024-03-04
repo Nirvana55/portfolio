@@ -33,12 +33,12 @@ const Posts = ({
         <title>N | {slug}</title>
       </Head>
       <Fade in>
-        <Box sx={{ mb: 4 }}>
-          <Typography fontWeight="bold" variant="h4">
+        <Box py={8}>
+          <Typography className='uppercase' fontWeight='bold' variant='h4'>
             {title}
           </Typography>
-          <Box mb={2}>
-            <Typography variant="caption">
+          <Box mb={2} pt={2}>
+            <Typography variant='caption'>
               {dateConvert.toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
@@ -46,14 +46,27 @@ const Posts = ({
               })}
             </Typography>
             &nbsp;
-            <Typography variant="caption">#{about}</Typography>
+            <Typography variant='caption'>#{about}</Typography>
           </Box>
           {!image ? (
             <CircularProgress />
           ) : (
-            <Image src={image} alt="photo" width={1000} height={600} />
+            <Image
+              src={image}
+              alt='photo'
+              loading='lazy'
+              width={1000}
+              height={600}
+            />
           )}
-          <ReactMarkdown>{content}</ReactMarkdown>
+          <ReactMarkdown className='whitespace-pre-wrap	text-justify leading-7 tracking-normal pt-10'>
+            {content}
+          </ReactMarkdown>
+
+          {/* <article className='prose lg:prose-xl text-white'>
+          <h1 className='text-white'>{title}</h1>
+          {content}
+        </article> */}
         </Box>
       </Fade>
     </>
