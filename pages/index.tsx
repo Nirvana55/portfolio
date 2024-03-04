@@ -32,14 +32,14 @@ const Page = ({ posts }: BlogPosts) => {
       </Head>
       <Fade in>
         <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
+          display='flex'
+          justifyContent='space-between'
+          alignItems='center'
           sx={{ mt: 6 }}
         >
           <Fade in>
             <Box sx={{ mt: 3, flexBasis: "500px" }}>
-              <Typography sx={{ fontSize: 35 }} fontWeight="bold">
+              <Typography sx={{ fontSize: 35 }} fontWeight='bold'>
                 Hey, {ipadScreen && <br />} Wassup
                 <WaveHandStyle>👋</WaveHandStyle>
               </Typography>
@@ -48,18 +48,17 @@ const Page = ({ posts }: BlogPosts) => {
                   mt: 3,
                   lineHeight: 1.8,
                 }}
-                variant="body2"
+                variant='body2'
               >
                 Full stack web developer who has worked on sites for small and
                 medium-sized enterprises. I can assist you in advertising your
                 services and design up a whole website to boost your business.
-                Profound in Web Development, MERN stack(React/Node/Mongodb) and
-                wordpress.
+                Profound in Web Development.
               </Typography>
-              <Link href="/about">
+              <Link href='/about'>
                 <ReadMoreButtonStyle
                   sx={{ mt: 2, color: "white", padding: 0 }}
-                  size="medium"
+                  size='medium'
                 >
                   Read More About Me
                 </ReadMoreButtonStyle>
@@ -79,9 +78,9 @@ const Page = ({ posts }: BlogPosts) => {
                 <Image
                   height={140}
                   width={140}
-                  className="image-style"
+                  className='image-style'
                   src={Nirvana}
-                  alt="Nirvana"
+                  alt='Nirvana'
                 />
               </Box>
             </Fade>
@@ -93,7 +92,7 @@ const Page = ({ posts }: BlogPosts) => {
         <Box sx={{ mb: 4 }}>
           <Box sx={{ mt: 10 }}>
             <Fade in>
-              <Typography sx={{ fontSize: 35 }} fontWeight="bold">
+              <Typography sx={{ fontSize: 35 }} fontWeight='bold'>
                 Recent Posts
               </Typography>
             </Fade>
@@ -125,11 +124,11 @@ const Page = ({ posts }: BlogPosts) => {
                 ) : (
                   <Box
                     sx={{ mt: 8, height: "110px" }}
-                    textAlign="center"
-                    alignSelf="center"
-                    justifySelf="center"
+                    textAlign='center'
+                    alignSelf='center'
+                    justifySelf='center'
                   >
-                    <Typography variant="body2">
+                    <Typography variant='body2'>
                       Sorry, Work In Progress
                     </Typography>
                   </Box>
@@ -139,7 +138,7 @@ const Page = ({ posts }: BlogPosts) => {
 
             <Fade in>
               <Box sx={{ float: "right", mt: 3, mb: 3 }}>
-                <Link href="/blog">
+                <Link href='/blog'>
                   <SeeAllPostButtonStyle>
                     See All Posts <ArrowRightAltIcon sx={{ pl: 1 }} />
                   </SeeAllPostButtonStyle>

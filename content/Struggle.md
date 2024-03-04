@@ -9,8 +9,7 @@ isPublished: true
 
 "Life can be tough. This is just a piece of my story"
 
-Entering the tech world and adapting to corporate life can be eye opening. Initially, I believed community of humble and friendly individuals, all eager to learn and grow together.
-\n However, reality often presents a different picture.
+Entering the tech world and adapting to corporate life can be eye opening. Initially, I believed community of humble and friendly individuals, all eager to learn and grow together.However, reality often presents a different picture.
 
 Everyone's journey is different. They share their experiences. Learning from them is valuable, but it's crucial to filter through their advice. In my opinion, humans can be compared to a vehicle. If it is overloaded, it cannot function efficiently. They simply have to dump their belongings. Instead of processing, we might find ourselves dumping unnecessary weight, often targeting those who seem less powerful. This practice is more common in corporate environments than we'd like to admit. It's a race, indeed, but don't let it weigh you down. In the grand scheme, these challenges are minor.
 
@@ -30,4 +29,4 @@ Eating local foods. Learning new things. Celebrating your unplanned birthday. Ma
 You will miss them a lot and these memories will become a cherished part of your story.
 I miss you guys.
 
-PS: p\*\*g bro for pushing me to write blogs. If you reading this, thanks man. Will try my best to continue it.
+PS: p\*\*g bro thanks for pushing me to write blogs. If you reading this, thanks man. Will try my best to continue it.

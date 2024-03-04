@@ -37,7 +37,7 @@ const Posts = ({
           <Typography className='uppercase' fontWeight='bold' variant='h4'>
             {title}
           </Typography>
-          <Box mb={2}>
+          <Box mb={2} pt={2}>
             <Typography variant='caption'>
               {dateConvert.toLocaleDateString("en-US", {
                 year: "numeric",
@@ -59,7 +59,7 @@ const Posts = ({
               height={600}
             />
           )}
-          <ReactMarkdown className='whitespace-pre-wrap	text-justify pt-10'>
+          <ReactMarkdown className='whitespace-pre-wrap	text-justify leading-7 tracking-normal pt-10'>
             {content}
           </ReactMarkdown>
 
