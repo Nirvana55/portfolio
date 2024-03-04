@@ -30,11 +30,10 @@ const Projects = () => {
     },
     {
       projectTitle: "Negja",
-      projectDescription: "Landing page for a client.",
+      projectDescription: "Landing page for a jewelry client.",
       status: "inProgress",
       image: "/negja.png",
-
-      link: "https://www.rubixxcube.com/",
+      link: "https://jewelry-association.vercel.app/",
     },
     {
       projectTitle: "Find A photographer",
@@ -106,7 +105,11 @@ const Projects = () => {
                               />
                             </ImageContainerStyle>
                             <CardContent sx={{ height: "120px" }}>
-                              <Typography variant='body1' fontWeight='bold'>
+                              <Typography
+                                variant='body1'
+                                className='text-lg'
+                                fontWeight='bold'
+                              >
                                 {item.projectTitle}
                               </Typography>
                               <Typography variant='caption'>
