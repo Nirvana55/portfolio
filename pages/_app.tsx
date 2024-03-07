@@ -6,9 +6,6 @@ import Layout from "../components/Layout";
 import NavBar from "../components/Navbar";
 import getTheme from "../config-theme";
 import "../styles/globals.css";
-import { Montserrat } from "next/font/google";
-
-const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -22,15 +19,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <ThemeProvider theme={selectTheme}>
         <CssBaseline />
-        <main className={montserrat.className}>
-          <Layout>
-            <NavBar />
-            <Box sx={{ pl: 4, pr: 4 }}>
-              <Component {...pageProps} />
-            </Box>
-            <Footer />
-          </Layout>
-        </main>
+        <Layout>
+          <NavBar />
+          <Box sx={{ pl: 4, pr: 4 }}>
+            <Component {...pageProps} />
+          </Box>
+          <Footer />
+        </Layout>
       </ThemeProvider>
     </>
   );

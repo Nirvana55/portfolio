@@ -37,10 +37,14 @@ const Blog = ({ blogs }: BlogPosts) => {
               />
             </ImageContainerStyle>
             <CardContent sx={{ height: "120px" }}>
-              <Typography variant='body1' fontWeight='bold'>
+              <Typography
+                variant='body1'
+                className='line-clamp-2'
+                fontWeight='bold'
+              >
                 {frontMatter.title.toUpperCase()}
               </Typography>
-              <Typography variant='caption'>
+              <Typography className='line-clamp-2' variant='caption'>
                 {frontMatter.description}
               </Typography>
             </CardContent>
