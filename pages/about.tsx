@@ -38,7 +38,13 @@ const About = () => {
                   borderRadius: "5px",
                 }}
               >
-                <Image src={Nirvana} height={200} width={200} alt='Nirvana' />
+                <Image
+                  src={Nirvana}
+                  loading='lazy'
+                  height={200}
+                  width={200}
+                  alt='Nirvana'
+                />
               </Box>
             </Fade>
 

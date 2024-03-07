@@ -79,6 +79,7 @@ const Page = ({ posts }: BlogPosts) => {
                   height={140}
                   width={140}
                   className='image-style'
+                  loading='lazy'
                   src={Nirvana}
                   alt='Nirvana'
                 />

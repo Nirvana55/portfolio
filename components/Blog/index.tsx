@@ -30,7 +30,7 @@ const Blog = ({ blogs }: BlogPosts) => {
               <Image
                 alt='Image Alt'
                 src={frontMatter.image}
-                layout='fill'
+                fill
                 objectFit='cover'
                 loading='lazy'
                 className='image-card'

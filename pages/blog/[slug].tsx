@@ -7,6 +7,11 @@ import path from "path";
 import { FrontMatter } from "../../types/blogData";
 import { getFileContent } from "../../utils/md";
 import ReactMarkdown from "react-markdown";
+import dynamic from "next/dynamic";
+
+const Giscus = dynamic(() => import("@giscus/react"), {
+  loading: () => <CircularProgress />,
+});
 
 interface SlugPathType {
   params: {
@@ -59,14 +64,25 @@ const Posts = ({
               height={600}
             />
           )}
-          <ReactMarkdown className='whitespace-pre-wrap	text-justify leading-7 tracking-normal pt-10'>
+          <ReactMarkdown className='whitespace-pre-wrap	text-justify leading-7 tracking-normal py-10'>
             {content}
           </ReactMarkdown>
 
-          {/* <article className='prose lg:prose-xl text-white'>
-          <h1 className='text-white'>{title}</h1>
-          {content}
-        </article> */}
+          <Giscus
+            id='comments'
+            repo='nirvana55/portfolio'
+            repoId='R_kgDOIo1Npw'
+            category='General'
+            categoryId='DIC_kwDOIo1Np84CdtyX'
+            mapping='url'
+            term='Welcome to my blog'
+            reactionsEnabled='1'
+            emitMetadata='0'
+            inputPosition='bottom'
+            theme='dark'
+            lang='en'
+            loading='lazy'
+          />
         </Box>
       </Fade>
     </>

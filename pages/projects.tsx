@@ -92,14 +92,14 @@ const Projects = () => {
                       <a>
                         <Fade in>
                           <CardContainer
-                            className='hover:-translate-y-6 transition duration-500 ease-in'
+                            className='hover:-translate-y-6 transition hover:duration-500 ease-in-out'
                             sx={{ cursor: "pointer" }}
                           >
                             <ImageContainerStyle>
                               <Image
                                 alt='Image Alt'
                                 src={item.image}
-                                layout='fill'
+                                fill
                                 loading='lazy'
                                 className='image-card'
                               />
