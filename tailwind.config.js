@@ -9,7 +9,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        custom: "1px 0.5px 6px 1px #DC143C", // Add your custom shadow here
+      },
+    },
   },
   plugins: [
     require("@tailwindcss/typography"),

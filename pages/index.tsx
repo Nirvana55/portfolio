@@ -105,7 +105,7 @@ const Page = ({ posts }: BlogPosts) => {
                   <Grid
                     container
                     justifyContent={mobileScreen ? "center" : ""}
-                    spacing={2.5}
+                    spacing={3}
                     columns={{ xs: 4, sm: 8, md: 12 }}
                   >
                     {posts

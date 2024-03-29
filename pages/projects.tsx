@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Box,
   Button,
@@ -5,19 +7,19 @@ import {
   CardContent,
   Fade,
   Grid,
-  TextField,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import Head from "next/head";
 import React, { useState } from "react";
-import SearchIcon from "@mui/icons-material/Search";
-import InputAdornment from "@mui/material/InputAdornment";
+// import SearchIcon from "@mui/icons-material/Search";
+// import InputAdornment from "@mui/material/InputAdornment";
 import WorkInProgress from "../components/WorkInProgress";
 import Link from "next/link";
-import { CardContainer, ImageContainerStyle } from "../components/Blog/styles";
+import { ImageContainerStyle } from "../components/Blog/styles";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const data = [
@@ -91,9 +93,12 @@ const Projects = () => {
                     <Link href={item.link} legacyBehavior>
                       <a>
                         <Fade in>
-                          <CardContainer
-                            className='hover:-translate-y-6 transition hover:duration-500 ease-in-out'
-                            sx={{ cursor: "pointer" }}
+                          <motion.div
+                            whileHover={{
+                              y: -10,
+                              transition: { type: "spring" },
+                            }}
+                            className='cursor-pointer shadow-custom h-full rounded'
                           >
                             <ImageContainerStyle>
                               <Image
@@ -123,7 +128,7 @@ const Projects = () => {
                                 Read More
                               </Button>
                             </CardActions>
-                          </CardContainer>
+                          </motion.div>
                         </Fade>
                       </a>
                     </Link>
