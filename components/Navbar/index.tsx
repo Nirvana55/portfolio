@@ -30,7 +30,7 @@ const NavBar = () => {
     { id: 2, name: "About", link: "/about" },
     { id: 3, name: "Blog", link: "/blog" },
     { id: 4, name: "Projects", link: "/projects" },
-    { id: 5, name: "News-Feed", link: "/newsboard" },
+    // { id: 5, name: "News-Feed", link: "/newsboard" },
   ];
 
   const handleDrawerToggle = () => {
@@ -47,8 +47,8 @@ const NavBar = () => {
           p: "1rem 0.87rem",
         }}
       >
-        <Box display="flex" justifyContent="space-between">
-          <Typography fontSize={20} marginLeft={1.5} fontWeight="bold">
+        <Box display='flex' justifyContent='space-between'>
+          <Typography fontSize={20} marginLeft={1.5} fontWeight='bold'>
             Nikhil
           </Typography>
           <IconButton onClick={handleDrawerToggle}>
@@ -60,7 +60,7 @@ const NavBar = () => {
           {navList.map((item) => (
             <ListItem key={item.id} disablePadding>
               <ListItemButton
-                component="a"
+                component='a'
                 href={item.link}
                 onClick={handleDrawerToggle}
                 sx={{ cursor: "pointer" }}
@@ -78,25 +78,25 @@ const NavBar = () => {
     <Box sx={{ display: "flex" }}>
       <Fade in={true}>
         <AppBar
-          position="static"
-          component="nav"
-          color="transparent"
+          position='static'
+          component='nav'
+          color='transparent'
           elevation={0}
           sx={{ mb: `${!isMobileScreen ? 1 : 0}` }}
         >
           <Toolbar>
             <IconButton
               onClick={handleDrawerToggle}
-              edge="start"
-              color="inherit"
-              aria-label="open-drawer"
+              edge='start'
+              color='inherit'
+              aria-label='open-drawer'
               sx={{ display: { sm: "none" } }}
             >
               <MenuIcon sx={{ fontSize: 30 }} />
             </IconButton>
             <Typography
-              variant="h6"
-              component="div"
+              variant='h6'
+              component='div'
               sx={{
                 flexGrow: 1,
                 display: { xs: "none", sm: "block" },
@@ -106,14 +106,14 @@ const NavBar = () => {
             </Typography>
             <Box
               sx={{ display: { xs: "none", sm: "flex" } }}
-              alignItems="center"
+              alignItems='center'
             >
               {navList.map((item) => (
                 <Box
                   sx={{
                     display: { xs: "none", sm: "flex" },
                   }}
-                  component="a"
+                  component='a'
                   key={item.id}
                   href={item.link}
                 >
@@ -142,8 +142,8 @@ const NavBar = () => {
                 </Box>
               ))}
               <Box
-                component="a"
-                href="https://github.com/Nirvana55"
+                component='a'
+                href='https://github.com/Nirvana55'
                 sx={{ cursor: "pointer" }}
               >
                 <GitHubIcon sx={{ color: "white" }} />
@@ -153,11 +153,11 @@ const NavBar = () => {
         </AppBar>
       </Fade>
 
-      <Box sx={{ margin: 0 }} component="nav">
+      <Box sx={{ margin: 0 }} component='nav'>
         <Drawer
           open={mobileOpen}
           onClose={handleDrawerToggle}
-          variant="temporary"
+          variant='temporary'
           ModalProps={{ keepMounted: true }}
           sx={{
             display: { xs: "block", sm: "none" },
