@@ -16,12 +16,7 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/lab": "5.0.0-alpha.114",
     "@mui/material": "^5.10.16",
-<<<<<<< Updated upstream
     "framer-motion": "^11.0.23",
-=======
-    "@okta/okta-react": "^6.7.0",
-    "@react-spring/web": "^9.6.1",
->>>>>>> Stashed changes
     "gray-matter": "^4.0.3",
     "metascraper": "^5.38.0",
     "metascraper-image": "^5.38.0",
