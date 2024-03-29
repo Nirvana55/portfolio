@@ -16,8 +16,6 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/lab": "5.0.0-alpha.114",
     "@mui/material": "^5.10.16",
-    "@react-three/drei": "^9.102.6",
-    "@react-three/fiber": "^8.16.0",
     "framer-motion": "^11.0.23",
     "gray-matter": "^4.0.3",
     "metascraper": "^5.38.0",
